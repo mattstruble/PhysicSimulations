@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Data from http://nssdc.gsfc.nasa.gov/planetary/factsheet/ -->
+  <solarsystem>
+    <planet>
+      <name>Sun</name>
+      <mass>1988500e24</mass>
+      <radius>.3</radius> 
+      <distance>0.0</distance> <!--km-->
+      <velocity>0.0</velocity> <!--km/s-->
+      <color r="1.0" g="1.0" b="0.0"/><!--(0.0 - 1.0)-->
+    </planet>
+    <planet>
+      <name>Mercury</name>
+      <mass>.330e24</mass>
+      <radius>0.05</radius>
+      <distance>57.9e6</distance>
+      <velocity>47.4</velocity>
+	  <color r="1.0" g="0.647" b="0.0"/>
+    </planet>
+    <planet>
+      <name>Venus</name>
+      <mass>4.867e24</mass>
+      <radius>.08</radius>
+      <distance>108.2e6</distance>
+      <velocity>35</velocity>
+	  <color r="0.0" g="1.0" b="0.0"/>
+    </planet>
+    <planet>
+      <name>Earth</name>
+      <mass>5.97e24</mass>
+      <radius>.08</radius>
+      <distance>149.6e6</distance>
+      <velocity>29.8</velocity>
+	  <color r="0.0" g="0.498" b="1.0"/>
+    </planet>
+    <planet>
+      <name>Mars</name>
+      <mass>.642e24</mass>
+      <radius>0.06</radius>
+      <distance>227.9e6</distance>
+      <velocity>24.1</velocity>
+	  <color r="1.0" g="0.0" b="0.0"/>
+    </planet>
+    <planet>
+      <name>Jupiter</name>
+      <mass>1898e24</mass>
+      <radius>.45</radius>
+      <distance>778.6e6</distance>
+      <velocity>13.1</velocity>
+	  <color r="0.6" g="0.5" b="0.5"/>
+    </planet>
+    <planet>
+      <name>Saturn</name>
+      <mass>568e24</mass>
+      <radius>0.43</radius>
+      <distance>1433.5e6</distance>
+      <velocity>9.7</velocity>
+	  <color r="1.0" g="0.647" b="0.5"/>
+    </planet>
+    <planet>
+      <name>Uranus</name>
+      <mass>86.8e24</mass>
+      <radius>0.4</radius>
+      <distance>1872.5e6</distance>
+      <velocity>6.8</velocity>
+	  <color r="0.0" g="0.812" b="0.812"/>
+    </planet>
+    <planet>
+      <name>Neptune</name>
+      <mass>102e24</mass>
+      <radius>0.388</radius>
+      <distance>4495.1e6</distance>
+      <velocity>5.4</velocity>
+	  <color r="0.0" g="0.498" b="1.0"/>
+    </planet>
+	<planet>
+      <name>Moon</name>
+      <mass>6.14e24</mass>
+      <radius>0.01</radius>
+      <distance>149.8e6</distance>
+      <velocity>30.822</velocity>
+	  <color r="1.0" g="1.0" b="1.0"/>
+    </planet>
+  </solarsystem>

@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Utils">
+      <UniqueIdentifier>{c20f9fb0-3f0e-41bd-8deb-8aea1b3718d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{f4d799bb-290e-41a2-902f-38f1b5599d48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Primitives">
+      <UniqueIdentifier>{d6e111ee-5bba-4539-8686-a297bdab1af8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Primitives">
+      <UniqueIdentifier>{0d1c9088-1d37-4594-af6f-1aa5078e044e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Force">
+      <UniqueIdentifier>{3027c879-3b5f-4918-a454-bd933e7ddf96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Force\ForceGenerators">
+      <UniqueIdentifier>{8173ad9f-ffd2-4c86-9e4d-19f3deccd5ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Force">
+      <UniqueIdentifier>{25a23d98-237c-415d-a494-6cca9c0280d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Force\ForceGenerators">
+      <UniqueIdentifier>{cf7bb84f-ccb6-4a69-9e56-8e0a44848197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Collision">
+      <UniqueIdentifier>{9275ee04-bdf0-4a69-b237-9a9b488c14a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Collision">
+      <UniqueIdentifier>{a24d8da5-5f4c-41e3-aa6d-985900eeda68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Collision\ContactGenerators">
+      <UniqueIdentifier>{03534962-2999-4a8f-9f1f-fffdf1e37123}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Collision\ContactGenerators">
+      <UniqueIdentifier>{4da8bd69-e0c9-4e51-93d9-56c849767554}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Collision\ContactGenerators\Links">
+      <UniqueIdentifier>{a2d4472d-0789-4977-b3d7-3b93ef1570eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Collision\ContactGenerators\Links">
+      <UniqueIdentifier>{a893a951-28e6-4dc5-8d42-5d4a8c346dff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects">
+      <UniqueIdentifier>{877d406b-c1f4-4495-87d3-57071e7d807e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects">
+      <UniqueIdentifier>{fc999711-c4e7-4aba-8b34-f10b556ed793}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects\Mass Aggregates">
+      <UniqueIdentifier>{49711d74-e113-44b6-9329-aeec70ec5c74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects\Mass Aggregates">
+      <UniqueIdentifier>{e43a8439-eb2c-4447-b313-7368a9aa8ef3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GlutTime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3D.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2D.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Cube.cpp">
+      <Filter>Source Files\Primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="Sphere.cpp">
+      <Filter>Source Files\Primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="Cone.cpp">
+      <Filter>Source Files\Primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="Torus.cpp">
+      <Filter>Source Files\Primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="Teapot.cpp">
+      <Filter>Source Files\Primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HUD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GravityForceGenerator.cpp">
+      <Filter>Source Files\Force\ForceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="ForceRegistry.cpp">
+      <Filter>Source Files\Force</Filter>
+    </ClCompile>
+    <ClCompile Include="SolarSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SolarSystemParser.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml2.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="SpringForceGenerator.cpp">
+      <Filter>Source Files\Force\ForceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="AnchorSpringForceGenerator.cpp">
+      <Filter>Source Files\Force\ForceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="BungeeForceGenerator.cpp">
+      <Filter>Source Files\Force\ForceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="AnchorBungeeForceGenerator.cpp">
+      <Filter>Source Files\Force\ForceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="ContactResolver.cpp">
+      <Filter>Source Files\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Contact.cpp">
+      <Filter>Source Files\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CableLink.cpp">
+      <Filter>Source Files\Collision\ContactGenerators\Links</Filter>
+    </ClCompile>
+    <ClCompile Include="RodLink.cpp">
+      <Filter>Source Files\Collision\ContactGenerators\Links</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkContact.cpp">
+      <Filter>Source Files\Collision\ContactGenerators\Links</Filter>
+    </ClCompile>
+    <ClCompile Include="GroundContact.cpp">
+      <Filter>Source Files\Collision\ContactGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionHandler.cpp">
+      <Filter>Source Files\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstantGravityForceGenerator.cpp">
+      <Filter>Source Files\Force\ForceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="Plane.cpp">
+      <Filter>Source Files\Primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicObject.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicObjectHandler.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Planet.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="MassAggregate.cpp">
+      <Filter>Source Files\Objects\Mass Aggregates</Filter>
+    </ClCompile>
+    <ClCompile Include="CubeMA.cpp">
+      <Filter>Source Files\Objects\Mass Aggregates</Filter>
+    </ClCompile>
+    <ClCompile Include="BlobSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TetrahedronMA.cpp">
+      <Filter>Source Files\Objects\Mass Aggregates</Filter>
+    </ClCompile>
+    <ClCompile Include="PyramidMA.cpp">
+      <Filter>Source Files\Objects\Mass Aggregates</Filter>
+    </ClCompile>
+    <ClCompile Include="BlobGameParser.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GlutTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3D.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Cube.h">
+      <Filter>Header Files\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere.h">
+      <Filter>Header Files\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Cone.h">
+      <Filter>Header Files\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Torus.h">
+      <Filter>Header Files\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Teapot.h">
+      <Filter>Header Files\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitive.h">
+      <Filter>Header Files\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HUD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ForceGenerator.h">
+      <Filter>Header Files\Force\ForceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="GravityForceGenerator.h">
+      <Filter>Header Files\Force\ForceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="SpringForceGenerator.h">
+      <Filter>Header Files\Force\ForceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="ForceRegistry.h">
+      <Filter>Header Files\Force</Filter>
+    </ClInclude>
+    <ClInclude Include="SolarSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SolarSystemParser.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml2.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="AnchorSpringForceGenerator.h">
+      <Filter>Header Files\Force\ForceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="BungeeForceGenerator.h">
+      <Filter>Header Files\Force\ForceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="AnchorBungeeForceGenerator.h">
+      <Filter>Header Files\Force\ForceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="ContactGenerator.h">
+      <Filter>Header Files\Collision\ContactGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="Contact.h">
+      <Filter>Header Files\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="ContactResolver.h">
+      <Filter>Header Files\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkContact.h">
+      <Filter>Header Files\Collision\ContactGenerators\Links</Filter>
+    </ClInclude>
+    <ClInclude Include="CableLink.h">
+      <Filter>Header Files\Collision\ContactGenerators\Links</Filter>
+    </ClInclude>
+    <ClInclude Include="RodLink.h">
+      <Filter>Header Files\Collision\ContactGenerators\Links</Filter>
+    </ClInclude>
+    <ClInclude Include="GroundContact.h">
+      <Filter>Header Files\Collision\ContactGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionHandler.h">
+      <Filter>Header Files\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantGravityForceGenerator.h">
+      <Filter>Header Files\Force\ForceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>Header Files\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicObject.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicObjectHandler.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Planet.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="MassAggregate.h">
+      <Filter>Header Files\Objects\Mass Aggregates</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeMA.h">
+      <Filter>Header Files\Objects\Mass Aggregates</Filter>
+    </ClInclude>
+    <ClInclude Include="BlobSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TetrahedronMA.h">
+      <Filter>Header Files\Objects\Mass Aggregates</Filter>
+    </ClInclude>
+    <ClInclude Include="PyramidMA.h">
+      <Filter>Header Files\Objects\Mass Aggregates</Filter>
+    </ClInclude>
+    <ClInclude Include="BlobGameParser.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

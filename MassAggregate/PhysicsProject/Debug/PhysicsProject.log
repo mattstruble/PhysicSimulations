@@ -1,0 +1,55 @@
+﻿Build started 3/31/2015 2:40:18 PM.
+     1>Project "D:\Documents\Subversion\Console\struble\PhysicsProject\PhysicsProject\PhysicsProject.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\Documents\Subversion\Console\struble\PhysicsProject\packages\nupengl.core.0.0.0.1\build\native\../..//build/native/include/ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CollisionHandler.cpp
+         CollisionHandler.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Documents\Subversion\Console\struble\PhysicsProject\Debug\PhysicsProject.exe" /INCREMENTAL /NOLOGO D:\Documents\Subversion\Console\struble\PhysicsProject\packages\nupengl.core.0.0.0.1\build\native\../..//build/native/lib/Win32\v120\glew32.lib D:\Documents\Subversion\Console\struble\PhysicsProject\packages\nupengl.core.0.0.0.1\build\native\../..//build/native/lib/Win32\v120\glfw3dll.lib D:\Documents\Subversion\Console\struble\PhysicsProject\packages\nupengl.core.0.0.0.1\build\native\../..//build/native/lib/Win32\v120\freeglut.lib OpenGL32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Documents\Subversion\Console\struble\PhysicsProject\Debug\PhysicsProject.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Documents\Subversion\Console\struble\PhysicsProject\Debug\PhysicsProject.lib" /MACHINE:X86 Debug\AnchorBungeeForceGenerator.obj
+         Debug\AnchorSpringForceGenerator.obj
+         Debug\BlobGameParser.obj
+         Debug\BlobSystem.obj
+         Debug\BungeeForceGenerator.obj
+         Debug\CableLink.obj
+         Debug\Camera.obj
+         Debug\CollisionHandler.obj
+         Debug\Color.obj
+         Debug\Cone.obj
+         Debug\ConstantGravityForceGenerator.obj
+         Debug\Cube.obj
+         Debug\CubeMA.obj
+         Debug\Debug.obj
+         Debug\ForceRegistry.obj
+         Debug\Game.obj
+         Debug\GameObject.obj
+         Debug\GlutTime.obj
+         Debug\GravityForceGenerator.obj
+         Debug\GroundContact.obj
+         Debug\HUD.obj
+         Debug\LinkContact.obj
+         Debug\Main.obj
+         Debug\MassAggregate.obj
+         Debug\Matrix.obj
+         Debug\PhysicObject.obj
+         Debug\Contact.obj
+         Debug\ContactResolver.obj
+         Debug\PhysicObjectHandler.obj
+         Debug\Plane.obj
+         Debug\Planet.obj
+         Debug\PyramidMA.obj
+         Debug\RodLink.obj
+         Debug\SolarSystem.obj
+         Debug\SolarSystemParser.obj
+         Debug\Sphere.obj
+         Debug\SpringForceGenerator.obj
+         Debug\Teapot.obj
+         Debug\TetrahedronMA.obj
+         Debug\tinyxml2.obj
+         Debug\Torus.obj
+         Debug\Vector2D.obj
+         Debug\Vector3D.obj
+         PhysicsProject.vcxproj -> D:\Documents\Subversion\Console\struble\PhysicsProject\Debug\PhysicsProject.exe
+     1>Done Building Project "D:\Documents\Subversion\Console\struble\PhysicsProject\PhysicsProject\PhysicsProject.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.14
