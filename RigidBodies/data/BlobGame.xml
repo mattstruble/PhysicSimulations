@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blobgame>
+	<ground x="60" y="1" z="60"/>
+	<gravity x="0.0" y="-9.0" z="0.0"/>
+	<tetrahedron>
+		<position x="10" y="10" z="0"/>
+		<color r="1.0" g="0.0" b="0.0"/>
+		<size>3</size>
+		<mass>1</mass>
+	</tetrahedron>
+	<cube>
+		<position x="0" y="10" z="0"/>
+		<color r="0.0" g="1.0" b="0.0"/>
+		<size>3</size>
+		<mass>1</mass>
+	</cube>
+	<pyramid>
+		<position x="-10" y="10" z="0"/>
+		<color r="0.0" g="0.0" b="1.0"/>
+		<size>3</size>
+		<mass>1</mass>
+	</pyramid>
+</blobgame>
