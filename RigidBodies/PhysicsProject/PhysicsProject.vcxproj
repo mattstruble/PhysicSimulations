@@ -110,6 +110,7 @@
     <ClCompile Include="RBGameObject.cpp" />
     <ClCompile Include="RBGroundContact.cpp" />
     <ClCompile Include="RigidBody.cpp" />
+    <ClCompile Include="RigidBodySystem.cpp" />
     <ClCompile Include="RodLink.cpp" />
     <ClCompile Include="SolarSystem.cpp" />
     <ClCompile Include="SolarSystemParser.cpp" />
@@ -165,7 +166,6 @@
     <ClInclude Include="RBCollisionCube.h" />
     <ClInclude Include="RBCollisionData.h" />
     <ClInclude Include="RBCollisionDetector.h" />
-    <ClInclude Include="RBCollisionHandler.h" />
     <ClInclude Include="CollisionPlane.h" />
     <ClInclude Include="RBCollisionPrimitive.h" />
     <ClInclude Include="RBCollisionSphere.h" />
@@ -173,6 +173,7 @@
     <ClInclude Include="RBGroundContact.h" />
     <ClInclude Include="RigidBody.h" />
     <ClInclude Include="RBGameObject.h" />
+    <ClInclude Include="RigidBodySystem.h" />
     <ClInclude Include="RodLink.h" />
     <ClInclude Include="SolarSystem.h" />
     <ClInclude Include="SolarSystemParser.h" />

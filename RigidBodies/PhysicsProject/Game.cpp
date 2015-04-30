@@ -35,14 +35,19 @@ void Game::Init(int width, int height)
 	//mp_SolarSystem = new SolarSystem();
 	//mp_SolarSystem->Initialize(mp_PhysicObjectHandler);
 
-	mp_BlobSystem = new BlobSystem();
-	mp_BlobSystem->Initialize(mp_PhysicObjectHandler);
+	//mp_BlobSystem = new BlobSystem();
+	//mp_BlobSystem->Initialize(mp_PhysicObjectHandler);
+
+	mp_RigidBodySystem = new RigidBodySystem();
+	mp_RigidBodySystem->Initialize(mp_PhysicObjectHandler);
 }
 
 //--------------------------------------------------------------------------------
 void Game::Update(float gameTime)
 {
 	mp_PhysicObjectHandler->Update(gameTime);
+
+	mp_RigidBodySystem->Update(gameTime);
 
 	mp_Camera->Update(); 
 	
@@ -52,6 +57,7 @@ void Game::Update(float gameTime)
 void Game::Draw()
 {
 	mp_PhysicObjectHandler->Draw();
+	mp_RigidBodySystem->Draw();
 	mp_HUD->Draw();
 }
 

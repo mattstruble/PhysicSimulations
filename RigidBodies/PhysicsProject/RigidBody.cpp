@@ -44,7 +44,7 @@ void RigidBody::Initialize(float mass, Vector3D initialPosition, Vector3D initia
 }
 
 //-----------------------------------------------------------------------------
-void RigidBody::Integrate(float duration)
+void RigidBody::Update(float duration)
 {
 	m_LastFrameAcceleration = m_Acceleration;
 	m_LastFrameAcceleration += (m_ForceAccum * m_InverseMass);

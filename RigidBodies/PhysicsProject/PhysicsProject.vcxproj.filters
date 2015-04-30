@@ -84,9 +84,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GlutTime.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Matrix.cpp">
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
@@ -113,15 +110,6 @@
     </ClCompile>
     <ClCompile Include="Teapot.cpp">
       <Filter>Source Files\Primitives</Filter>
-    </ClCompile>
-    <ClCompile Include="Color.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Debug.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HUD.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GravityForceGenerator.cpp">
       <Filter>Source Files\Force\ForceGenerators</Filter>
@@ -240,14 +228,26 @@
     <ClCompile Include="RBGameObject.cpp">
       <Filter>Source Files\Objects\Rigid Bodies</Filter>
     </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="HUD.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="GlutTime.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidBodySystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GlutTime.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Matrix.h">
       <Filter>Header Files\Utils</Filter>
     </ClInclude>
@@ -277,15 +277,6 @@
     </ClInclude>
     <ClInclude Include="Primitive.h">
       <Filter>Header Files\Primitives</Filter>
-    </ClInclude>
-    <ClInclude Include="Debug.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Color.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HUD.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ForceGenerator.h">
       <Filter>Header Files\Force\ForceGenerators</Filter>
@@ -401,9 +392,6 @@
     <ClInclude Include="RBCollisionDetector.h">
       <Filter>Header Files\Collision\Rigid Body</Filter>
     </ClInclude>
-    <ClInclude Include="RBCollisionHandler.h">
-      <Filter>Header Files\Collision\Rigid Body</Filter>
-    </ClInclude>
     <ClInclude Include="RBContact.h">
       <Filter>Header Files\Collision\Rigid Body</Filter>
     </ClInclude>
@@ -418,6 +406,21 @@
     </ClInclude>
     <ClInclude Include="RBGameObject.h">
       <Filter>Header Files\Objects\Rigid Bodies</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="HUD.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="GlutTime.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="RigidBodySystem.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

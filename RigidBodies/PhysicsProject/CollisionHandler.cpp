@@ -189,6 +189,7 @@ void CollisionHandler::resolveContacts(float dt)
 void CollisionHandler::resolveRBContacts(float dt)
 {
 	setRBContacts(dt);
+	adjustPositions(dt);
 	adjustVelocities(dt);
 }
 
@@ -231,7 +232,7 @@ void CollisionHandler::adjustPositions(float dt)
 			break;
 
 		m_RBContacts[index].MatchAwakeState();
-		m_RBContacts[index].ApplyPositionChange(linearChange, angularChange, max);
+		m_RBContacts[index].ApplyPositionChange(linearChange, angularChange, max, dt);
 
 		for (i = 0; i < m_RBContacts.size(); i++)
 		{
@@ -282,7 +283,7 @@ void CollisionHandler::adjustVelocities(float dt)
 			break;
 
 		m_RBContacts[index].MatchAwakeState();
-		m_RBContacts[index].ApplyVelocityChange(velocityChange, rotationChange);
+		m_RBContacts[index].ApplyVelocityChange(velocityChange, rotationChange, dt);
 
 		for (unsigned int i = 0; i < m_RBContacts.size(); i++)
 		{

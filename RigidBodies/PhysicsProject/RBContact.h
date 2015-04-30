@@ -20,13 +20,13 @@ public:
 
 	void Initialize(RigidBody* rigidBodyOne, RigidBody* rigidBodyTwo, Vector3D contactPoint, Vector3D contactNormal, float penetration, float restitution, float friction);
 
-	void CalculateInternals(float deltaTime);
-	void CalculateDesiredDeltavelocity(float deltaTime);
+	void CalculateInternals(float dt);
+	void CalculateDesiredDeltavelocity(float dt);
 
 	void MatchAwakeState();
 
-	void ApplyPositionChange(Vector3D linearChange[2], Vector3D angularChange[2], float penetration);
-	void ApplyVelocityChange(Vector3D velocityChange[2], Vector3D rotationChange[2]);
+	void ApplyPositionChange(Vector3D linearChange[2], Vector3D angularChange[2], float penetration, float dt);
+	void ApplyVelocityChange(Vector3D velocityChange[2], Vector3D rotationChange[2], float dt);
 
 	void SetPenetration(float penetration) { m_Penetration = penetration; };
 	float GetPenetration() { return m_Penetration; };

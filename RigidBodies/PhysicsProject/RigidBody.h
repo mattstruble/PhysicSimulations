@@ -21,7 +21,7 @@ public:
 	~RigidBody();
 
 	virtual void Initialize(float mass, Vector3D initialPosition = Vector3D::Zero, Vector3D initialVelocity = Vector3D::Zero, Vector3D initialAcceleration = Vector3D::Zero, Vector3D initialRotation = Vector3D::Zero, float linearDampening = 1, float angularDampening = 1);
-	void Integrate(float duration);
+	void Update(float duration);
 	void Reset();
 	void Clear();
 

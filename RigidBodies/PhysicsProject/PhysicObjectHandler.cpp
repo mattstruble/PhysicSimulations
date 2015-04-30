@@ -41,6 +41,11 @@ void PhysicObjectHandler::Update(float dt)
 		m_PhysicObjects[i]->Update(dt);
 	}
 
+	for (unsigned int i = 0; i < m_RigidBodies.size(); i++)
+	{
+		m_RigidBodies[i]->Update(dt);
+	}
+
 	mp_CollisionHandler->Update(dt);
 }
 

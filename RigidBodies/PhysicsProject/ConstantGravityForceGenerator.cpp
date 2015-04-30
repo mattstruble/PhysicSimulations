@@ -22,8 +22,8 @@ void ConstantGravityForceGenerator::UpdateForce(PhysicObject* object, float dt)
 
 void ConstantGravityForceGenerator::UpdateForce(RigidBody* rigidBody, float dt)
 {
-	if (!rigidBody->HasInfiniteMass())
-		return;
+	//if (!rigidBody->HasInfiniteMass())
+		//return;
 	
 	rigidBody->AddForce(m_Gravity * rigidBody->GetMass());
 }

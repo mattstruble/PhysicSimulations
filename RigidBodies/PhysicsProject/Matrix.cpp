@@ -19,6 +19,7 @@ Matrix::Matrix(const Matrix& rhs)
 	m_NumColumns = rhs.GetNumColumns();
 	m_Size = m_NumRows * m_NumColumns;
 	mp_Matrix = new float[m_Size];
+
 	for (int i = 0; i < m_Size; ++i)
 	{
 		mp_Matrix[i] = rhs.mp_Matrix[i];
@@ -121,19 +122,18 @@ Matrix Matrix::CombinedMatrix(const Matrix& rhs, bool add) const
 //--------------------------------------------------------------------------------
 Matrix Matrix::Transpose() const
 {
-	Matrix tranposed = Matrix(m_NumColumns, m_NumRows);
+	Matrix transpose = Matrix(m_NumColumns, m_NumRows);
 
-	for (int i = 0; i < m_Size; ++i) 
+	for (int i = 0; i < m_NumRows; i++)
 	{
-		for (int j = 0; j < i; ++j) 
+		for (int j = 0; j < m_NumColumns; j++)
 		{
-			float tmp = Get(j, i);
-			tranposed.Set(j, i, Get(i, j));
-			tranposed.Set(i, j, tmp);
+			transpose.Set(i * m_NumColumns + j, mp_Matrix[j * m_NumColumns + i]);
+			transpose.Set(j * m_NumColumns + i, mp_Matrix[i * m_NumColumns + j]);
 		}
 	}
 
-	return tranposed;
+	return transpose;
 }
 
 //--------------------------------------------------------------------------------

@@ -249,7 +249,7 @@ void RBContact::MatchAwakeState()
 }
 
 //-----------------------------------------------------------------------------
-void RBContact::ApplyPositionChange(Vector3D linearChange[2], Vector3D angularChange[2], float penetration)
+void RBContact::ApplyPositionChange(Vector3D linearChange[2], Vector3D angularChange[2], float penetration, float dt)
 {
 	const float angularLimit = 0.2f;
 	float angularMove[2];
@@ -361,7 +361,7 @@ void RBContact::ApplyPositionChange(Vector3D linearChange[2], Vector3D angularCh
 }
 
 //-----------------------------------------------------------------------------
-void RBContact::ApplyVelocityChange(Vector3D velocityChange[2], Vector3D rotationChange[2])
+void RBContact::ApplyVelocityChange(Vector3D velocityChange[2], Vector3D rotationChange[2], float dt)
 {
 	Matrix inverseInertiaTensor[2];
 	mp_RigidBodyOne->GetInverseInertiaTensorWorld(inverseInertiaTensor[0]);

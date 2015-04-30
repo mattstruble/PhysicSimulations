@@ -36,6 +36,7 @@ public:
 	void AddContactGenerator(std::vector<ContactGenerator*> generators);
 
 	void AddContact(Contact contact) { m_Contacts.push_back(contact); };
+	void AddContact(RBContact contact) { m_RBContacts.push_back(contact); };
 	
 	bool Remove(PhysicObject* object);
 	bool Remove(RigidBody* object);
@@ -44,17 +45,19 @@ public:
 	const std::vector<RigidBody*>& GetRigidBodies() { return mp_RigidBodies; };
 
 	inline int GetCollisions() { return m_Collisions; };
+	inline float GetRestitution() { return m_Restitution; };
+	inline float GetFriction() { return m_Friction; };
 
 	inline RBCollisionDetector* GetRBCollisionDetector() { return mp_RBCollisionDetector; };
 
 private:
 	int collisions();
 	void resolveContacts(float dt);
-	void resolveRBContacts(float deltaTime);
+	void resolveRBContacts(float dt);
 
-	void setRBContacts(float deltaTime);
-	void adjustPositions(float deltaTime);
-	void adjustVelocities(float deltaTime);
+	void setRBContacts(float dt);
+	void adjustPositions(float dt);
+	void adjustVelocities(float dt);
 
 	std::vector<PhysicObject*> mp_PhysicObjects;
 	std::vector<RigidBody*> mp_RigidBodies;

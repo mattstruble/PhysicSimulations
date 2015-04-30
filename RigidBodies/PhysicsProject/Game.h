@@ -15,6 +15,7 @@
 #include "SolarSystem.h"
 #include "GravityForceGenerator.h"
 #include "BlobSystem.h"
+#include "RigidBodySystem.h"
 //======================================================================
 class Game
 {
@@ -36,6 +37,7 @@ private:
 	PhysicObjectHandler* mp_PhysicObjectHandler;
 	SolarSystem* mp_SolarSystem;
 	BlobSystem* mp_BlobSystem;
+	RigidBodySystem* mp_RigidBodySystem;
 
 	int m_ScreenWidth;
 	int m_ScreenHeight;
