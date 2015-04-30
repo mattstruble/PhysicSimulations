@@ -35,7 +35,7 @@ void RBGroundContact::AddContact(CollisionHandler* collisionHandler) const
 				collisionHandler->GetRBCollisionDetector()->SphereAndHalfSpace((*rigidBodyIter)->GetCollisionSphere(), m_CollisionPlane, collisionHandler);
 				break;
 
-			case e_CollisionType::BOX:
+			case e_CollisionType::CUBE:
 				collisionHandler->GetRBCollisionDetector()->CubeAndHalfSpace((*rigidBodyIter)->GetCollisionCube(), m_CollisionPlane, collisionHandler);
 				break;
 		}

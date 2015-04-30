@@ -5,6 +5,7 @@
 #include "CollisionHandler.h"
 #include "ContactGenerator.h"
 #include "RBCollisionDetector.h"
+#include "RBGameObjectContact.h"
 //======================================================================
 CollisionHandler::CollisionHandler()
 {

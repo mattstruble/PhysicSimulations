@@ -64,10 +64,12 @@ private:
 	void initalizeMatrix(int rows, int columns);
 
 	Matrix InverseNN() const;
+	Matrix Inverse44() const;
 	Matrix Inverse33() const;
 	Matrix Inverse22() const;
 
 	float DeterminantNN() const;
+	float Determinant44() const;
 	float Determinant33() const;
 	float Determinant22() const;
 

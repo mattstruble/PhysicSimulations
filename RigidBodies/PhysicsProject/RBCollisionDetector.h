@@ -31,5 +31,7 @@ public:
 	unsigned int CubeAndHalfSpace(const RBCollisionCube& cube, const CollisionPlane& plane, CollisionHandler* collisionHandler);
 	unsigned int CubeAndSphere(const RBCollisionCube& cube, const RBCollisionSphere& sphere, CollisionHandler* collisionHandler);
 	unsigned int CubeAndCube(const RBCollisionCube& cubeOne, const RBCollisionCube& cubeTwo, CollisionHandler* collisionHandler);
+
+	void CheckCollision(RigidBody* rigidBodyOne, RigidBody* rigidBodyTwo, CollisionHandler* collisionHandler);
 };
 #endif

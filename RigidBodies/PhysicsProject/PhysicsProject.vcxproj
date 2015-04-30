@@ -108,6 +108,7 @@
     <ClCompile Include="RBCollisionSphere.cpp" />
     <ClCompile Include="RBContact.cpp" />
     <ClCompile Include="RBGameObject.cpp" />
+    <ClCompile Include="RBGameObjectContact.cpp" />
     <ClCompile Include="RBGroundContact.cpp" />
     <ClCompile Include="RigidBody.cpp" />
     <ClCompile Include="RigidBodySystem.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="RBCollisionPrimitive.h" />
     <ClInclude Include="RBCollisionSphere.h" />
     <ClInclude Include="RBContact.h" />
+    <ClInclude Include="RBGameObjectContact.h" />
     <ClInclude Include="RBGroundContact.h" />
     <ClInclude Include="RigidBody.h" />
     <ClInclude Include="RBGameObject.h" />

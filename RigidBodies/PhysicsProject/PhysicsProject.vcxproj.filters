@@ -243,6 +243,9 @@
     <ClCompile Include="RigidBodySystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RBGameObjectContact.cpp">
+      <Filter>Source Files\Collision\ContactGenerators</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -421,6 +424,9 @@
     </ClInclude>
     <ClInclude Include="RigidBodySystem.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RBGameObjectContact.h">
+      <Filter>Header Files\Collision\ContactGenerators</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

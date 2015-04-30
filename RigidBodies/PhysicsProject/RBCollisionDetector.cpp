@@ -318,3 +318,32 @@ unsigned int CubeAndCube(const RBCollisionCube& cubeOne, const RBCollisionCube& 
 
 	return 0;
 }
+
+//-----------------------------------------------------------------------------
+void RBCollisionDetector::CheckCollision(RigidBody* rigidBodyOne, RigidBody* rigidBodyTwo, CollisionHandler* collisionHandler)
+{
+	if (rigidBodyOne->GetCollisionType() == e_CollisionType::SPHERE)
+	{
+		switch (rigidBodyTwo->GetCollisionType())
+		{
+		case e_CollisionType::SPHERE:
+			SphereAndSphere(rigidBodyOne->GetCollisionSphere(), rigidBodyTwo->GetCollisionSphere(), collisionHandler);
+			break;
+		case e_CollisionType::CUBE:
+			//CubeAndSphere(rigidBodyTwo->GetCollisionCube(), rigidBodyOne->GetCollisionSphere(), collisionHandler);
+			break;
+		}
+	}
+	else if (rigidBodyOne->GetCollisionType() == e_CollisionType::CUBE)
+	{
+		switch (rigidBodyTwo->GetCollisionType())
+		{
+		case e_CollisionType::SPHERE:
+			//CubeAndSphere(rigidBodyOne->GetCollisionCube(), rigidBodyTwo->GetCollisionSphere(), collisionHandler);
+			break;
+		case e_CollisionType::CUBE:
+			//CubeAndCube(rigidBodyOne->GetCollisionCube(), rigidBodyTwo->GetCollisionCube(), collisionHandler);
+			break;
+		}
+	}
+}

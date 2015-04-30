@@ -12,7 +12,7 @@
 enum e_CollisionType
 {
 	SPHERE,
-	BOX
+	CUBE
 };
 //=============================================================================
 class RigidBody;

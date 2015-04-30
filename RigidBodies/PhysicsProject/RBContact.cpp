@@ -343,7 +343,7 @@ void RBContact::ApplyPositionChange(Vector3D linearChange[2], Vector3D angularCh
 				angularChange[i] = inverseInertiaTensor.Transform(targetAngularDirection) * (angularMove[i] / angularInertia[i]);
 			}
 
-			linearChange[i] = m_ContactNormal * linearMove[i];
+			linearChange[i] = m_ContactNormal * linearMove[i] * dt;
 
 			Vector3D position = rigidBody->GetPosition();
 			position += m_ContactNormal * linearMove[i];
@@ -351,7 +351,7 @@ void RBContact::ApplyPositionChange(Vector3D linearChange[2], Vector3D angularCh
 
 			Quaternion q;
 			q = rigidBody->GetOrientation();
-			q.VectorScaling(angularChange[i], 1.0f);
+			q.VectorScaling(angularChange[i] * dt, 1.0f);
 			rigidBody->SetOrientation(q);
 
 			if (!rigidBody->GetAwake())
@@ -376,7 +376,8 @@ void RBContact::ApplyVelocityChange(Vector3D velocityChange[2], Vector3D rotatio
 	}
 	else
 	{
-		impulseContact = calculateFrictionImpulse(inverseInertiaTensor);
+		impulseContact = calculateImpulse(inverseInertiaTensor);
+		//impulseContact = calculateFrictionImpulse(inverseInertiaTensor);
 	}
 
 	Vector3D impulse = m_ContactToWorld.Transform(impulseContact);
