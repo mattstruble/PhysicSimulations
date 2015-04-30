@@ -16,7 +16,7 @@ protected:
 	Vector3D m_Vertices[8];
 
 public:
-	RBCollisionCube(RigidBody* rigidBody, Vector3D halfSize, Matrix offset = Matrix());
+	RBCollisionCube(RigidBody* rigidBody, Vector3D halfSize = Vector3D(1, 1, 1), Matrix offset = Matrix());
 	~RBCollisionCube();
 
 	inline Vector3D GetHalfSize() const { return m_HalfSize; };

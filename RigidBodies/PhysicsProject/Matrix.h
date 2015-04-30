@@ -63,6 +63,14 @@ public:
 private:
 	void initalizeMatrix(int rows, int columns);
 
+	Matrix InverseNN() const;
+	Matrix Inverse33() const;
+	Matrix Inverse22() const;
+
+	float DeterminantNN() const;
+	float Determinant33() const;
+	float Determinant22() const;
+
 	float* mp_Matrix;
 	int  m_NumRows;
 	int  m_NumColumns;

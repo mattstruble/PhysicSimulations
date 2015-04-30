@@ -234,6 +234,12 @@
     <ClCompile Include="RBContact.cpp">
       <Filter>Source Files\Collision\Rigid Body</Filter>
     </ClCompile>
+    <ClCompile Include="RBGroundContact.cpp">
+      <Filter>Source Files\Collision\ContactGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="RBGameObject.cpp">
+      <Filter>Source Files\Objects\Rigid Bodies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -407,8 +413,11 @@
     <ClInclude Include="IntersectionTests.h">
       <Filter>Header Files\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="RBCollisionPlane.h">
-      <Filter>Header Files\Collision\Rigid Body</Filter>
+    <ClInclude Include="RBGroundContact.h">
+      <Filter>Header Files\Collision\ContactGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="RBGameObject.h">
+      <Filter>Header Files\Objects\Rigid Bodies</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

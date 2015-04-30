@@ -105,6 +105,12 @@ void PhysicObjectHandler::Add(PhysicObject* object)
 }
 
 //--------------------------------------------------------------------------------
+void PhysicObjectHandler::Add(RigidBody* rigidBody)
+{
+	m_RigidBodies.push_back(rigidBody);
+}
+
+//--------------------------------------------------------------------------------
 void PhysicObjectHandler::Add(const std::vector<PhysicObject*>& objects)
 {
 	for (unsigned int i = 0; i < objects.size(); i++)
@@ -113,6 +119,16 @@ void PhysicObjectHandler::Add(const std::vector<PhysicObject*>& objects)
 	}
 }
 
+//--------------------------------------------------------------------------------
+void PhysicObjectHandler::Add(const std::vector<RigidBody*>& rigidbodies)
+{
+	for (unsigned int i = 0; i < rigidbodies.size(); i++)
+	{
+		m_RigidBodies.push_back(rigidbodies[i]);
+	}
+}
+
+//--------------------------------------------------------------------------------
 void PhysicObjectHandler::AddCollisionObject(PhysicObject* object)
 {
 	Add(object);
@@ -120,6 +136,15 @@ void PhysicObjectHandler::AddCollisionObject(PhysicObject* object)
 	mp_CollisionHandler->AddCollisionObject(object);
 }
 
+//--------------------------------------------------------------------------------
+void PhysicObjectHandler::AddCollisionObject(RigidBody* rigidBody)
+{
+	Add(rigidBody);
+
+	mp_CollisionHandler->AddCollisionObject(rigidBody);
+}
+
+//--------------------------------------------------------------------------------
 void PhysicObjectHandler::AddCollisionObject(std::vector<PhysicObject*> objects)
 {
 	Add(objects);
@@ -127,11 +152,21 @@ void PhysicObjectHandler::AddCollisionObject(std::vector<PhysicObject*> objects)
 	mp_CollisionHandler->AddCollisionObject(objects);
 }
 
+//--------------------------------------------------------------------------------
+void PhysicObjectHandler::AddCollisionObject(std::vector<RigidBody*> rigidBodies)
+{
+	Add(rigidBodies);
+
+	mp_CollisionHandler->AddCollisionObject(rigidBodies);
+}
+
+//--------------------------------------------------------------------------------
 void PhysicObjectHandler::AddContactGenerator(ContactGenerator* generator)
 {
 	mp_CollisionHandler->AddContactGenerator(generator);
 }
 
+//--------------------------------------------------------------------------------
 void PhysicObjectHandler::AddContactGenerator(std::vector<ContactGenerator*> generators)
 {
 	mp_CollisionHandler->AddContactGenerator(generators);
@@ -153,14 +188,44 @@ bool PhysicObjectHandler::Remove(PhysicObject* object)
 	return false;
 }
 
+//--------------------------------------------------------------------------------
+bool PhysicObjectHandler::Remove(RigidBody* rigidBody)
+{
+	for (unsigned int i = 0; i < m_RigidBodies.size(); i++)
+	{
+		if (rigidBody == m_RigidBodies[i])
+		{
+			delete rigidBody;
+			m_RigidBodies.erase(m_RigidBodies.begin() + i);
+			return true;
+		}
+	}
+
+	return false;
+}
+
+//--------------------------------------------------------------------------------
 bool PhysicObjectHandler::RemoveCollisionObject(PhysicObject* object)
 {
 	return mp_CollisionHandler->Remove(object);
 }
 
+//--------------------------------------------------------------------------------
+bool PhysicObjectHandler::RemoveCollisionObject(RigidBody* rigidBody)
+{
+	return mp_CollisionHandler->Remove(rigidBody);
+}
+
+//--------------------------------------------------------------------------------
 void PhysicObjectHandler::AddToRegistry(PhysicObject* object, ForceGenerator* generator)
 {
 	mp_ForceRegistry->Add(object, generator);
+}
+
+//--------------------------------------------------------------------------------
+void PhysicObjectHandler::AddToRegistry(RigidBody* rigidBody, ForceGenerator* generator)
+{
+	mp_ForceRegistry->Add(rigidBody, generator);
 }
 
 //--------------------------------------------------------------------------------
@@ -179,6 +244,21 @@ void PhysicObjectHandler::AddToRegistry(std::vector<PhysicObject*> objects, Forc
 }
 
 //--------------------------------------------------------------------------------
+void PhysicObjectHandler::AddToRegistry(std::vector<RigidBody*> rigidBodies, ForceGenerator* generator)
+{
+
+	if (generator == nullptr)
+	{
+		return;
+	}
+
+	for (unsigned int i = 0; i < rigidBodies.size(); i++)
+	{
+		mp_ForceRegistry->Add(rigidBodies[i], generator);
+	}
+}
+
+//--------------------------------------------------------------------------------
 void PhysicObjectHandler::RemoveFromRegistry(std::vector<PhysicObject*> objects, ForceGenerator* generator )
 {
 	if (generator == nullptr)
@@ -189,6 +269,20 @@ void PhysicObjectHandler::RemoveFromRegistry(std::vector<PhysicObject*> objects,
 	for (unsigned int i = 0; i < objects.size(); i++)
 	{
 		mp_ForceRegistry->Remove(objects[i], generator);
+	}
+}
+
+//--------------------------------------------------------------------------------
+void PhysicObjectHandler::RemoveFromRegistry(std::vector<RigidBody*> rigidBodies, ForceGenerator* generator)
+{
+	if (generator == nullptr)
+	{
+		return;
+	}
+
+	for (unsigned int i = 0; i < rigidBodies.size(); i++)
+	{
+		mp_ForceRegistry->Remove(rigidBodies[i], generator);
 	}
 }
 //================================================================================

@@ -137,86 +137,177 @@ Matrix Matrix::Transpose() const
 }
 
 //--------------------------------------------------------------------------------
-// http://easy-learn-c-language.blogspot.com/2013/02/numerical-methods-inverse-of-nxn-matrix.html
-//--------------------------------------------------------------------------------
 Matrix Matrix::Inverse() const
 {
-	if (m_NumColumns != m_NumRows)
+	if (m_NumColumns == 3)
+		return Inverse33();
+	else if (m_NumColumns == 2)
+		return Inverse22();
+	else
+		return InverseNN();
+}
+
+//--------------------------------------------------------------------------------
+Matrix Matrix::Inverse22() const
+{
+	Matrix m = *this;
+
+	if (m.Determinant() != 0)
 	{
-		return *this;
+		float invDet = 1 / m.Determinant();
+
+		Matrix mInv = Matrix(2, 2);
+
+		mInv.Set(0, 0, (m.Get(1, 1) * invDet));
+		mInv.Set(0, 1, (-m.Get(0, 1) * invDet));
+		mInv.Set(1, 0, (-m.Get(1, 0) * invDet));
+		mInv.Set(1, 1, (m.Get(0, 0) * invDet));
+
+		m = mInv;
+
+		return m;
 	}
 
-	// Make double columns for room for inverted matrix
-	Matrix inverted = Matrix(m_NumRows, m_NumColumns * 2);
-	float ratio, a, tmp;
+	return Matrix(m.GetNumRows(), m.GetNumColumns());
+}
 
-	int i, j, k;
+//--------------------------------------------------------------------------------
+Matrix Matrix::Inverse33() const
+{
+	Matrix m = *this;
 
-	for (i = 0; i < m_NumRows; i++)
+	if (m.Determinant() != 0)
 	{
-		for (j = 0; j < m_NumColumns; j++)
-		{
-			inverted.Set(i, j, Get(i, j));
-		}
+		float invDet = 1 / m.Determinant();
+
+		Matrix mInv = Matrix(3, 3);
+
+		mInv.Set(0, 0, (m.Get(1, 1) * m.Get(2, 2) - m.Get(2, 1) * m.Get(1, 2)) * invDet);
+		mInv.Set(0, 1, (m.Get(0, 2) * m.Get(2, 1) - m.Get(0, 1) * m.Get(2, 2)) * invDet);
+		mInv.Set(0, 2, (m.Get(0, 1) * m.Get(1, 2) - m.Get(0, 2) * m.Get(1, 1)) * invDet);
+		mInv.Set(1, 0, (m.Get(1, 2) * m.Get(2, 0) - m.Get(1, 0) * m.Get(2, 2)) * invDet);
+		mInv.Set(1, 1, (m.Get(0, 0) * m.Get(2, 2) - m.Get(0, 2) * m.Get(2, 0)) * invDet);
+		mInv.Set(1, 2, (m.Get(1, 0) * m.Get(0, 2) - m.Get(0, 0) * m.Get(1, 2)) * invDet);
+		mInv.Set(2, 0, (m.Get(1, 0) * m.Get(2, 1) - m.Get(2, 0) * m.Get(1, 1)) * invDet);
+		mInv.Set(2, 1, (m.Get(2, 0) * m.Get(0, 1) - m.Get(0, 0) * m.Get(2, 1)) * invDet);
+		mInv.Set(2, 2, (m.Get(0, 0) * m.Get(1, 1) - m.Get(1, 0) * m.Get(0, 1)) * invDet);
+
+		m = mInv;
+
+		return m;
 	}
-	
-	// Form augmented matrix
-	for (i = 0; i < m_NumRows; i++)
-	{
-		for (j = m_NumColumns; j < 2 * m_NumColumns; j++)
-		{
-			if (i == (j - m_NumColumns))
-			{
-				inverted.Set(i, j, 1);
-			}
-			else
-			{
-				inverted.Set(i, j, 0);
-			}
-		}
-	}
 
-	for (i = 0; i < m_NumRows; i++)
-	{
-		for (j = 0; j < m_NumRows; j++)
-		{
-			if (i != j)
-			{
-				ratio = inverted.Get(j, i) / inverted.Get(i, i);
+	return Matrix(m.GetNumRows(), m.GetNumColumns());
+}
 
-				for (k = 0; k < 2 * m_NumColumns; k++)
+//--------------------------------------------------------------------------------
+// http://easy-learn-c-language.blogspot.com/2013/02/numerical-methods-inverse-of-nxn-matrix.html
+//--------------------------------------------------------------------------------
+Matrix Matrix::InverseNN() const
+{
+	Matrix inverse = *this;
+
+	if (inverse.Determinant() != 0)
+	{
+		int n = inverse.GetNumRows();
+		int i, j, k;
+		float d;
+		for (int i = 1; i <= n; i++)
+		{
+			for (j = 1; j <= 2 * n; j++)
+			{
+				if (j == (i + n))
 				{
-					tmp = inverted.Get(j, k) - (ratio * inverted.Get(i, k));
-					inverted.Set(j, k, tmp);
+					inverse.Set(i, j, 1);
 				}
 			}
 		}
-	}
-
-	for (i = 0; i < m_NumRows; i++) 
-	{
-		a = inverted.Get(i, i);
-
-		for (j = 0; j < 2 * m_NumColumns; j++)
+		for (i = n; i > 1; i--)
 		{
-			inverted.Set(i, j, inverted.Get(i, j) / a);
+			if (inverse.Get(i - 1, 1) < inverse.Get(i, 1))
+			{
+				for (j = 1; j <= n * 2; j++)
+				{
+					d = inverse.Get(i, j);
+					inverse.Set(i, j, inverse.Get(i - 1, j));
+					inverse.Set(i - 1, j, d);
+				}
+			}
 		}
+		for (i = 1; i <= n; i++)
+		{
+			for (j = 1; j <= n * 2; j++)
+			{
+				if (j != i)
+				{
+					d = inverse.Get(j, i) / inverse.Get(i, i);
+					for (k = 1; k <= n * 2; k++)
+					{
+						inverse.Set(j, k, inverse.Get(j, k) - (inverse.Get(i, k) * d));
+					}
+				}
+			}
+		}
+		for (i = 1; i <= n; i++)
+		{
+			d = inverse.Get(i, i);
+			for (j = 1; j <= n * 2; j++)
+			{
+				inverse.Set(i, j, inverse.Get(i, j) / d);
+			}
+		}
+		return inverse;
 	}
 
-	return inverted;
+	return Matrix(inverse.GetNumRows(), inverse.GetNumColumns());
+}
+
+//--------------------------------------------------------------------------------
+float Matrix::Determinant() const
+{
+	if (m_NumRows != m_NumColumns)
+		return 0;
+	else if (m_NumColumns == 3)
+		return Determinant33();
+	else if (m_NumColumns == 2)
+		return Determinant22();
+	else
+		return DeterminantNN();
+}
+
+//--------------------------------------------------------------------------------
+float Matrix::Determinant22() const
+{
+	Matrix m = *this;
+
+	float det = (m.Get(0, 0) * m.Get(1, 1)) - (m.Get(0, 1) * m.Get(1, 0));
+
+	return det;
+}
+
+//--------------------------------------------------------------------------------
+float Matrix::Determinant33() const
+{
+	Matrix m = *this;
+
+	float det = m.Get(0, 0) * (m.Get(1, 1) * m.Get(2, 2) - m.Get(2, 1) * m.Get(1, 2)) -
+		m.Get(0, 1) * (m.Get(1, 0) * m.Get(2, 2) - m.Get(1, 2) * m.Get(2, 0)) +
+		m.Get(0, 2) * (m.Get(1, 0) * m.Get(2, 1) - m.Get(1, 1) * m.Get(2, 0));
+
+	return det;
 }
 
 //--------------------------------------------------------------------------------
 // http://easy-learn-c-language.blogspot.com/2013/02/numerical-methods-determinant-of-nxn.html
 //--------------------------------------------------------------------------------
-float Matrix::Determinant() const
+float Matrix::DeterminantNN() const
 {
 	if (m_NumRows != m_NumColumns)
 		return 0;
 
 	float ratio, det = 1;
 
-	Matrix UT = Matrix(*this);
+	Matrix UT = *this;
 
 	for (int i = 0; i < m_NumRows; i++)
 	{
@@ -228,9 +319,7 @@ float Matrix::Determinant() const
 
 				for (int k = 0; k < m_NumRows; k++)
 				{
-					float tmp = UT.Get(j, k);
-					tmp -= ratio * UT.Get(i, k);
-					UT.Set(j, k, tmp);
+					UT.Set(j, k, (UT.Get(j, k) - (ratio*UT.Get(i, k))));
 				}
 			}
 		}

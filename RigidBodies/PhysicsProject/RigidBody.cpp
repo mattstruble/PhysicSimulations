@@ -10,6 +10,7 @@ RigidBody::RigidBody()
 	m_TransformationMatrix = Matrix(4, 4);
 	m_InverseInertiaTensor = Matrix(3, 3);
 	m_InverseInertiaTensorWorld = Matrix(3, 3);
+	m_CollisionType = e_CollisionType::SPHERE;
 }
 
 //-----------------------------------------------------------------------------

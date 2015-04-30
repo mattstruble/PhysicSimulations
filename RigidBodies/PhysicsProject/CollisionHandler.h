@@ -30,7 +30,7 @@ public:
 	void AddCollisionObject(PhysicObject* object);
 	void AddCollisionObject(std::vector<PhysicObject*> objects);
 	void AddCollisionObject(RigidBody* rigidBody);
-	void AddCollisionObjects(std::vector<RigidBody*> rigidBodies);
+	void AddCollisionObject(std::vector<RigidBody*> rigidBodies);
 
 	void AddContactGenerator(ContactGenerator* generator);
 	void AddContactGenerator(std::vector<ContactGenerator*> generators);
@@ -38,6 +38,7 @@ public:
 	void AddContact(Contact contact) { m_Contacts.push_back(contact); };
 	
 	bool Remove(PhysicObject* object);
+	bool Remove(RigidBody* object);
 
 	const std::vector<PhysicObject*>& GetPhysicObjects() const { return mp_PhysicObjects; };
 	const std::vector<RigidBody*>& GetRigidBodies() { return mp_RigidBodies; };

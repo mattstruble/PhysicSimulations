@@ -91,7 +91,7 @@ void CollisionHandler::AddCollisionObject(RigidBody* rigidBody)
 }
 
 //-----------------------------------------------------------------------------
-void CollisionHandler::AddCollisionObjects(std::vector<RigidBody*> rigidBodies)
+void CollisionHandler::AddCollisionObject(std::vector<RigidBody*> rigidBodies)
 {
 	std::vector<RigidBody*>::iterator iter;
 	for (iter = rigidBodies.begin(); iter != rigidBodies.end(); iter++)
@@ -125,6 +125,22 @@ bool CollisionHandler::Remove(PhysicObject* object)
 		{
 			delete object;
 			mp_PhysicObjects.erase(mp_PhysicObjects.begin() + i);
+			return true;
+		}
+	}
+
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+bool CollisionHandler::Remove(RigidBody* rigidBody)
+{
+	for (unsigned int i = 0; i < mp_RigidBodies.size(); i++)
+	{
+		if (rigidBody == mp_RigidBodies[i])
+		{
+			delete rigidBody;
+			mp_RigidBodies.erase(mp_RigidBodies.begin() + i);
 			return true;
 		}
 	}

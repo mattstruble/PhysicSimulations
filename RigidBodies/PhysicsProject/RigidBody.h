@@ -11,6 +11,7 @@
 #include "Quaternion.h"
 #include "Matrix.h"
 #include "RBCollisionSphere.h"
+#include "RBCollisionCube.h"
 //=============================================================================
 class RigidBody
 {
@@ -37,18 +38,26 @@ public:
 	inline void SetOrientation(Quaternion orientation) { m_Orientation = orientation; };
 
 	inline Quaternion GetOrientation() { return m_Orientation; };
+
 	inline Matrix GetTransform() const { return m_TransformationMatrix; };
+
 	inline Vector3D GetPointInWorldSpace(const Vector3D point) { return m_TransformationMatrix.Transform(point); };
 	inline Vector3D GetPosition() { return m_Position; };
 	inline Vector3D GetRotation() { return m_Rotation; };
 	inline Vector3D GetVelocity() { return m_Velocity; };
 	inline Vector3D GetLastFrameAcceleration() { return m_LastFrameAcceleration; };
+
 	inline void GetInverseInertiaTensorWorld(Matrix& inverseInertiaTensor) const { inverseInertiaTensor = m_InverseInertiaTensorWorld; };
+
 	inline float GetInverseMass() { return m_InverseMass; };
 	inline float GetMass() { return m_Mass; };
+
+	int GetCollisionType() { return m_CollisionType; };
+
 	inline bool GetAwake() { return m_IsAwake; };
 
-	virtual RBCollisionSphere GetCollisionSphere() { return RBCollisionSphere(this, 1); };
+	RBCollisionSphere GetCollisionSphere() { return RBCollisionSphere(this); };
+	RBCollisionCube GetCollisionCube() { return RBCollisionCube(this); };
 
 	inline bool HasInfiniteMass() { return m_InverseMass == 1; }
 
@@ -83,5 +92,6 @@ protected:
 
 	bool m_IsAwake;
 
+	int m_CollisionType;
 };
 #endif 
