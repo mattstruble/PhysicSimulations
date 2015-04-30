@@ -60,7 +60,7 @@ void PhysicObjectHandler::HandleKey(unsigned char key)
 	{
 		if (key != '0')
 		{
-			if (key - '0' < m_PhysicObjects.size())
+			if (static_cast<unsigned int>(key - '0') < m_PhysicObjects.size())
 			{
 				mp_Target = m_PhysicObjects[key - '0'];
 			}

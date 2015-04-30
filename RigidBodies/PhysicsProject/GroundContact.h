@@ -15,7 +15,7 @@ public:
 	GroundContact(float groundY = 0);
 	~GroundContact() {};
 
-	virtual void AddContact(CollisionHandler* handler) const;
+	void AddContact(CollisionHandler* handler) const;
 
 private:
 	float m_GroundY;

@@ -1,11 +1,65 @@
-﻿Build started 4/28/2015 5:08:44 PM.
-     1>Project "D:\Documents\Subversion\Console\struble\PhysicsProject\PhysicsProject\PhysicsProject.vcxproj" on node 2 (Build target(s)).
+﻿Build started 4/30/2015 1:25:15 AM.
+     1>Project "C:\Users\matthew.struble\Documents\Git\M-Physics\trunk\RigidBodies\PhysicsProject\PhysicsProject.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\Documents\Subversion\Console\struble\PhysicsProject\packages\nupengl.core.0.0.0.1\build\native\../..//build/native/include/ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CollisionHandler.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\matthew.struble\Documents\Git\M-Physics\trunk\RigidBodies\packages\nupengl.core.0.0.0.1\build\native\../..//build/native/include/" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt AnchorBungeeForceGenerator.cpp AnchorSpringForceGenerator.cpp BlobGameParser.cpp BlobSystem.cpp BungeeForceGenerator.cpp CableLink.cpp Camera.cpp CollisionHandler.cpp Color.cpp Cone.cpp ConstantGravityForceGenerator.cpp Cube.cpp CubeMA.cpp Debug.cpp ForceRegistry.cpp Game.cpp GameObject.cpp GlutTime.cpp GravityForceGenerator.cpp GroundContact.cpp HUD.cpp IntersectionTests.cpp LinkContact.cpp Main.cpp MassAggregate.cpp Matrix.cpp PhysicObject.cpp Contact.cpp ContactResolver.cpp PhysicObjectHandler.cpp Plane.cpp Planet.cpp PyramidMA.cpp Quaternion.cpp RBCollisionCube.cpp RBCollisionDetector.cpp RBCollisionPrimitive.cpp RBCollisionSphere.cpp RBContact.cpp RigidBody.cpp RodLink.cpp SolarSystem.cpp SolarSystemParser.cpp Sphere.cpp SpringForceGenerator.cpp Teapot.cpp TetrahedronMA.cpp tinyxml2.cpp Torus.cpp Vector2D.cpp Vector3D.cpp
+         Vector3D.cpp
+         Vector2D.cpp
+         Torus.cpp
+         tinyxml2.cpp
+         TetrahedronMA.cpp
+         Teapot.cpp
+         SpringForceGenerator.cpp
+         Sphere.cpp
+         SolarSystemParser.cpp
+         SolarSystem.cpp
+         RodLink.cpp
+         RigidBody.cpp
+         RBContact.cpp
+         RBCollisionSphere.cpp
+         RBCollisionPrimitive.cpp
+         RBCollisionDetector.cpp
+         RBCollisionCube.cpp
+         Quaternion.cpp
+         PyramidMA.cpp
+         Planet.cpp
+         Generating Code...
+         Compiling...
+         Plane.cpp
+         PhysicObjectHandler.cpp
+         ContactResolver.cpp
+         Contact.cpp
+         PhysicObject.cpp
+         Matrix.cpp
+         MassAggregate.cpp
+         Main.cpp
+         LinkContact.cpp
+         IntersectionTests.cpp
+         HUD.cpp
+         GroundContact.cpp
+         GravityForceGenerator.cpp
+         GlutTime.cpp
+         GameObject.cpp
+         Game.cpp
+         ForceRegistry.cpp
+         Debug.cpp
+         CubeMA.cpp
+         Cube.cpp
+         Generating Code...
+         Compiling...
+         ConstantGravityForceGenerator.cpp
+         Cone.cpp
+         Color.cpp
          CollisionHandler.cpp
-     1>d:\documents\subversion\console\struble\physicsproject\physicsproject\collisionhandler.cpp(233): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+         Camera.cpp
+         CableLink.cpp
+         BungeeForceGenerator.cpp
+         BlobSystem.cpp
+         BlobGameParser.cpp
+         AnchorSpringForceGenerator.cpp
+         AnchorBungeeForceGenerator.cpp
+         Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Documents\Subversion\Console\struble\PhysicsProject\Debug\PhysicsProject.exe" /INCREMENTAL /NOLOGO D:\Documents\Subversion\Console\struble\PhysicsProject\packages\nupengl.core.0.0.0.1\build\native\../..//build/native/lib/Win32\v120\glew32.lib D:\Documents\Subversion\Console\struble\PhysicsProject\packages\nupengl.core.0.0.0.1\build\native\../..//build/native/lib/Win32\v120\glfw3dll.lib D:\Documents\Subversion\Console\struble\PhysicsProject\packages\nupengl.core.0.0.0.1\build\native\../..//build/native/lib/Win32\v120\freeglut.lib OpenGL32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Documents\Subversion\Console\struble\PhysicsProject\Debug\PhysicsProject.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Documents\Subversion\Console\struble\PhysicsProject\Debug\PhysicsProject.lib" /MACHINE:X86 Debug\AnchorBungeeForceGenerator.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\matthew.struble\Documents\Git\M-Physics\trunk\RigidBodies\Debug\PhysicsProject.exe" /INCREMENTAL /NOLOGO "C:\Users\matthew.struble\Documents\Git\M-Physics\trunk\RigidBodies\packages\nupengl.core.0.0.0.1\build\native\../..//build/native/lib/Win32\v120\glew32.lib" "C:\Users\matthew.struble\Documents\Git\M-Physics\trunk\RigidBodies\packages\nupengl.core.0.0.0.1\build\native\../..//build/native/lib/Win32\v120\glfw3dll.lib" "C:\Users\matthew.struble\Documents\Git\M-Physics\trunk\RigidBodies\packages\nupengl.core.0.0.0.1\build\native\../..//build/native/lib/Win32\v120\freeglut.lib" OpenGL32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\matthew.struble\Documents\Git\M-Physics\trunk\RigidBodies\Debug\PhysicsProject.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\matthew.struble\Documents\Git\M-Physics\trunk\RigidBodies\Debug\PhysicsProject.lib" /MACHINE:X86 Debug\AnchorBungeeForceGenerator.obj
          Debug\AnchorSpringForceGenerator.obj
          Debug\BlobGameParser.obj
          Debug\BlobSystem.obj
@@ -56,9 +110,9 @@
          Debug\Torus.obj
          Debug\Vector2D.obj
          Debug\Vector3D.obj
-         PhysicsProject.vcxproj -> D:\Documents\Subversion\Console\struble\PhysicsProject\Debug\PhysicsProject.exe
-     1>Done Building Project "D:\Documents\Subversion\Console\struble\PhysicsProject\PhysicsProject\PhysicsProject.vcxproj" (Build target(s)).
+         PhysicsProject.vcxproj -> C:\Users\matthew.struble\Documents\Git\M-Physics\trunk\RigidBodies\Debug\PhysicsProject.exe
+     1>Done Building Project "C:\Users\matthew.struble\Documents\Git\M-Physics\trunk\RigidBodies\PhysicsProject\PhysicsProject.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.14
+Time Elapsed 00:00:23.45

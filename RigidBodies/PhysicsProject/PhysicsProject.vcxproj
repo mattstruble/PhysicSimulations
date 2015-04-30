@@ -165,6 +165,7 @@
     <ClInclude Include="RBCollisionDetector.h" />
     <ClInclude Include="RBCollisionHandler.h" />
     <ClInclude Include="CollisionPlane.h" />
+    <ClInclude Include="RBCollisionPlane.h" />
     <ClInclude Include="RBCollisionPrimitive.h" />
     <ClInclude Include="RBCollisionSphere.h" />
     <ClInclude Include="RBContact.h" />

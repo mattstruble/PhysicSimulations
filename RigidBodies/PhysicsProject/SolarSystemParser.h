@@ -18,10 +18,10 @@ public:
 	struct PlanetData
 	{
 		std::string Name;
-		double Mass;
+		float Mass;
 		float Radius;
-		double Distance;
-		double Velocity;
+		float Distance;
+		float Velocity;
 		Color Color;
 	};
 

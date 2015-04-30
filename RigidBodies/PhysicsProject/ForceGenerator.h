@@ -8,6 +8,7 @@
 #pragma once
 //======================================================================
 #include "PhysicObject.h"
+#include "RigidBody.h"
 //======================================================================
 
 class ForceGenerator
@@ -17,5 +18,6 @@ public:
 	~ForceGenerator() {};
 
 	virtual void UpdateForce(PhysicObject* object, float dt) = 0;
+	virtual void UpdateForce(RigidBody* rigidBody, float dt) {};
 };
 #endif

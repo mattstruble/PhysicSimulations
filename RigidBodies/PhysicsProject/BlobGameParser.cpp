@@ -64,10 +64,10 @@ BlobGameParser::AggregateData BlobGameParser::ParseAggregateData(XMLElement* dat
 	data.Color = Color(it->FloatAttribute("r"), it->FloatAttribute("g"), it->FloatAttribute("b"));
 
 	it = it->NextSiblingElement("size");
-	data.Size = atof(it->GetText());
+	data.Size = static_cast<float>(atof(it->GetText()));
 
 	it = it->NextSiblingElement("mass");
-	data.Mass = atof(it->GetText());
+	data.Mass = static_cast<float>(atof(it->GetText()));
 
 	return data;
 }

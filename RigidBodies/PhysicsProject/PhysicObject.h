@@ -18,7 +18,7 @@ public:
 	PhysicObject();
 	~PhysicObject();
 
-	virtual void Initialize(double mass = 1, Vector3D position = Vector3D::Zero, Vector3D velocity = Vector3D::Zero, Vector3D acceleration = Vector3D::Zero, Vector3D rotation = Vector3D::Zero);
+	virtual void Initialize(float mass = 1, Vector3D position = Vector3D::Zero, Vector3D velocity = Vector3D::Zero, Vector3D acceleration = Vector3D::Zero, Vector3D rotation = Vector3D::Zero);
 	virtual void Update(float gameTime);
 	virtual void Draw();
 	virtual void Reset();
@@ -39,8 +39,8 @@ public:
 	inline Vector3D GetVelocity() { return m_Velocity;  };
 	inline Vector3D GetAcceleration() { return m_Acceleration; };
 	inline Vector3D GetRotation() { return m_Rotation; };
-	inline double GetMass() { return m_Mass; };
-	inline double GetInverseMass() { return m_InverseMass; };
+	inline float GetMass() { return m_Mass; };
+	inline float GetInverseMass() { return m_InverseMass; };
 	inline float GetRadius() { return m_Radius; };
 	inline float GetRestitution() { return m_Restitution; };
 	inline std::string GetName() { return m_Name; };
@@ -58,8 +58,8 @@ protected:
 	Vector3D m_InitAcceleration;
 	Vector3D m_InitRotation;
 
-	double m_Mass;
-	double m_InverseMass;
+	float m_Mass;
+	float m_InverseMass;
 
 	float m_Dampening;
 	float m_Radius;

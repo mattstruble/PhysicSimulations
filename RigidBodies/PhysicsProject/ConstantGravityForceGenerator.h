@@ -15,8 +15,8 @@ public:
 	ConstantGravityForceGenerator(const Vector3D& gravity);
 	~ConstantGravityForceGenerator();
 
-	virtual void UpdateForce(PhysicObject* object, float dt) override;
-
+	void UpdateForce(PhysicObject* object, float dt);
+	void UpdateForce(RigidBody* rigidBody, float dt);
 private:
 	Vector3D m_Gravity;
 };

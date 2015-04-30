@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
 	glutInit(&argc, argv);                 
 	initalize();
 
-	srand(time(NULL));
+	srand(static_cast<unsigned int>(time(NULL)));
 
 	return 0;
 }
@@ -54,9 +54,9 @@ void initalize()
 	gp_GlutTime->Init();
 
 	gp_Game = new Game();
-	gp_Game->Init(g_ScreenSize.X, g_ScreenSize.Y);
+	gp_Game->Init(static_cast<int>(g_ScreenSize.X), static_cast<int>(g_ScreenSize.Y));
 
-	glutInitWindowSize(g_ScreenSize.X, g_ScreenSize.Y);
+	glutInitWindowSize(static_cast<int>(g_ScreenSize.X), static_cast<int>(g_ScreenSize.Y));
 	glutInitWindowPosition(0, 0);
 	g_Window = glutCreateWindow("Solar System Simulation");
 	glutDisplayFunc(display);

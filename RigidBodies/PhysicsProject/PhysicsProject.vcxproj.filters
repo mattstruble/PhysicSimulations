@@ -407,5 +407,8 @@
     <ClInclude Include="IntersectionTests.h">
       <Filter>Header Files\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="RBCollisionPlane.h">
+      <Filter>Header Files\Collision\Rigid Body</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

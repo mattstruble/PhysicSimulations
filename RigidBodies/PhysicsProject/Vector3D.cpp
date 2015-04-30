@@ -15,7 +15,7 @@ Vector3D::Vector3D()
 	Z = 0;
 }
 //======================================================================
-Vector3D::Vector3D(double x, double y, double z)
+Vector3D::Vector3D(float x, float y, float z)
 {
 	X = x;
 	Y = y;
@@ -115,7 +115,7 @@ bool Vector3D::operator!=(const Vector3D& rhs) const
 }
 
 //--------------------------------------------------------------------------------
-double Vector3D::Dot(const Vector3D& lhs, const Vector3D& rhs)
+float Vector3D::Dot(const Vector3D& lhs, const Vector3D& rhs)
 {
 	return lhs.X * rhs.X + lhs.Y * rhs.Y + lhs.Z * rhs.Z;
 }
@@ -135,13 +135,13 @@ Vector3D Vector3D::Lerp(const Vector3D& start, const Vector3D& end, const float&
 //--------------------------------------------------------------------------------
 Vector3D Vector3D::SLerp(const Vector3D& start, const Vector3D& end, const float& percent)
 {
-	double dot = Dot(start, end);
+	float dot = Dot(start, end);
 
 	// clamp
 	dot = dot > 1.0f ? 1.0f : dot;
 	dot = dot < -1.0f ? -1.0f : dot;
 
-	double theta = acos(dot) * percent;
+	float theta = acos(dot) * percent;
 
 	Vector3D relativeVec = end - start*dot;
 	relativeVec.Normalize();
@@ -156,25 +156,25 @@ Vector3D Vector3D::NLerp(const Vector3D& start, const Vector3D& end, const float
 }
 
 //--------------------------------------------------------------------------------
-double Vector3D::Distance(const Vector3D& lhs, const Vector3D& rhs)
+float Vector3D::Distance(const Vector3D& lhs, const Vector3D& rhs)
 {
 	return sqrt(Vector3D::DistanceSQ(lhs, rhs));
 }
 
 //--------------------------------------------------------------------------------
-double Vector3D::DistanceSQ(const Vector3D& lhs, const Vector3D& rhs)
+float Vector3D::DistanceSQ(const Vector3D& lhs, const Vector3D& rhs)
 {
 	return pow(lhs.X - rhs.X, 2) + pow(lhs.Y - rhs.Y, 2) + pow(lhs.Z - rhs.Z, 2);
 }
 
 //--------------------------------------------------------------------------------
-double Vector3D::Magnitude() const
+float Vector3D::Magnitude() const
 {
 	return sqrt(MagnitudeSquared());
 }
 
 //--------------------------------------------------------------------------------
-double Vector3D::MagnitudeSquared() const
+float Vector3D::MagnitudeSquared() const
 {
 	return (X * X) + (Y * Y) + (Z * Z);
 }

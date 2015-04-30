@@ -22,7 +22,7 @@ PhysicObject::~PhysicObject()
 }
 
 //--------------------------------------------------------------------------------
-void PhysicObject::Initialize(double mass, Vector3D position, Vector3D velocity, Vector3D acceleration, Vector3D rotation)
+void PhysicObject::Initialize(float mass, Vector3D position, Vector3D velocity, Vector3D acceleration, Vector3D rotation)
 {
 	m_Mass = mass;
 	m_InverseMass = mass == 0 ? 1 : 1 / mass;
@@ -41,9 +41,9 @@ void PhysicObject::Initialize(double mass, Vector3D position, Vector3D velocity,
 //--------------------------------------------------------------------------------
 void PhysicObject::Update(float gameTime)
 {
-	m_Position += m_Velocity * static_cast<double>(gameTime);
-	m_Acceleration = m_Force * static_cast<double>(m_InverseMass);
-	m_Velocity += m_Acceleration * static_cast<double>(gameTime);
+	m_Position += m_Velocity * gameTime;
+	m_Acceleration = m_Force * m_InverseMass;
+	m_Velocity += m_Acceleration * gameTime;
 
 	//m_Velocity *= m_Dampening;
 

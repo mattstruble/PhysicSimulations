@@ -12,13 +12,13 @@
 class Vector3D
 {
 public:
-	double X;
-	double Y;
-	double Z;
+	float X;
+	float Y;
+	float Z;
 	static const Vector3D Zero;
 
 	Vector3D();
-	Vector3D(double x, double y, double z);
+	Vector3D(float x, float y, float z);
 	~Vector3D();
 
 	Vector3D operator*(const float&) const;
@@ -36,18 +36,18 @@ public:
 	bool operator==(const Vector3D&) const;
 	bool operator!=(const Vector3D&) const;
 
-	static double Dot(const Vector3D&, const Vector3D&);
+	static float Dot(const Vector3D&, const Vector3D&);
 	static Vector3D Cross(const Vector3D&, const Vector3D&);
 
 	static Vector3D Lerp(const Vector3D&, const Vector3D&, const float&);
 	static Vector3D SLerp(const Vector3D&, const Vector3D&, const float&);
 	static Vector3D NLerp(const Vector3D&, const Vector3D&, const float&);
 	
-	static double Distance(const Vector3D&, const Vector3D&);
-	static double DistanceSQ(const Vector3D&, const Vector3D&);
+	static float Distance(const Vector3D&, const Vector3D&);
+	static float DistanceSQ(const Vector3D&, const Vector3D&);
 
-	double Magnitude() const;
-	double MagnitudeSquared() const;
+	float Magnitude() const;
+	float MagnitudeSquared() const;
 
 	void Normalize();
 	Vector3D Normalized();

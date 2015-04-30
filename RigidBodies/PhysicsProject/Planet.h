@@ -18,7 +18,7 @@ public:
 	Planet();
 	~Planet();
 
-	void Initialize(std::string name = "", float radius = 1, double mass = 1, Vector3D position = Vector3D::Zero, Vector3D velocity = Vector3D::Zero);
+	void Initialize(std::string name = "", float radius = 1, float mass = 1, Vector3D position = Vector3D::Zero, Vector3D velocity = Vector3D::Zero);
 	void Draw();
 	void Update(float dt);
 

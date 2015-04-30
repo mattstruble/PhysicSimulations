@@ -19,7 +19,7 @@ public:
 	virtual void UpdateForce(PhysicObject* object, float dt) override;
 
 private:
-	static const double GRAVITY;
+	static const float GRAVITY;
 	PhysicObjectHandler* mp_PhysicObjects;
 };
 #endif

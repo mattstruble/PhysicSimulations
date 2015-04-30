@@ -5,7 +5,7 @@
 #include "GravityForceGenerator.h"
 #include <math.h>
 //======================================================================
-double const GravityForceGenerator::GRAVITY = 6.67384e-20; 
+float const GravityForceGenerator::GRAVITY = 6.67384e-20f; 
 //======================================================================
 GravityForceGenerator::GravityForceGenerator(PhysicObjectHandler* physicObjects)
 {
@@ -26,11 +26,11 @@ void GravityForceGenerator::UpdateForce(PhysicObject* object, float dt)
 	{
 		if (object != (*it))
 		{
-			double distanceSQ = static_cast<double>(Vector3D::DistanceSQ(object->GetPosition(), (*it)->GetPosition()));
+			float distanceSQ = Vector3D::DistanceSQ(object->GetPosition(), (*it)->GetPosition());
 
-			double mass = static_cast<double>(object->GetMass()) * static_cast<double>((*it)->GetMass());
+			float mass = object->GetMass() * (*it)->GetMass();
 
-			double force = GRAVITY * (mass / distanceSQ);
+			float force = GRAVITY * (mass / distanceSQ);
 
 			Vector3D gravity = (*it)->GetPosition() - object->GetPosition();
 			gravity.Normalize();
