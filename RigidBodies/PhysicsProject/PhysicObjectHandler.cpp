@@ -59,7 +59,7 @@ void PhysicObjectHandler::Draw()
 }
 
 //--------------------------------------------------------------------------------
-void PhysicObjectHandler::HandleKey(unsigned char key)
+void PhysicObjectHandler::HandleKeyPressed(unsigned char key)
 {
 	if (isdigit(key))
 	{

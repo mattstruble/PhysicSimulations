@@ -22,7 +22,7 @@ public:
 	void Initialize();
 	void Update(float dt);
 	void Draw();
-	void HandleKey(unsigned char key);
+	void HandleKeyPressed(unsigned char key);
 	void Reset();
 	void Clear();
 

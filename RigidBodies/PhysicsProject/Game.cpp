@@ -68,23 +68,23 @@ void Game::HandleMouse(Vector2D mousePos)
 }
 
 //--------------------------------------------------------------------------------
-void Game::HandleMousePassive(int x, int y)
+void Game::HandleKeyPressed(unsigned char key)
 {
-	mp_Camera->HandleMousePassive(x, y);
-}
-
-//--------------------------------------------------------------------------------
-void Game::HandleKey(unsigned char key)
-{
-	mp_Camera->HandleKey(key);
-	mp_HUD->HandleKey(key);
-	mp_PhysicObjectHandler->HandleKey(key);
+	mp_Camera->HandleKeyPressed(key);
+	mp_HUD->HandleKeyPressed(key);
+	mp_PhysicObjectHandler->HandleKeyPressed(key);
 
 	if (isdigit(key))
 	{
 		mp_Camera->SetTarget(mp_PhysicObjectHandler->GetTarget());
 		mp_HUD->SetTarget(mp_PhysicObjectHandler->GetTarget());
 	}
+}
+
+//--------------------------------------------------------------------------------
+void Game::HandleKeyReleased(unsigned char key)
+{
+	mp_Camera->HandleKeyReleased(key);
 }
 
 //--------------------------------------------------------------------------------

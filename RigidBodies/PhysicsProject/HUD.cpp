@@ -67,7 +67,7 @@ void HUD::Update(float dt)
 }
 
 //--------------------------------------------------------------------------------
-void HUD::HandleKey(unsigned char key)
+void HUD::HandleKeyPressed(unsigned char key)
 {
 	if (key == '`')
 	{

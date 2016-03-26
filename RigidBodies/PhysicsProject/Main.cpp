@@ -19,7 +19,8 @@ void update(float gameTime);
 void initalize();
 void handleMouse(int x, int y);
 void handleMousePassive(int x, int y);
-void handleKeyboard(unsigned char key, int x, int y);
+void handleKeyPressed(unsigned char key, int x, int y);
+void handleKeyReleased(unsigned char key, int x, int y);
 void reshape(int w, int h);
 //======================================================================
 GlutTime* gp_GlutTime;
@@ -38,8 +39,6 @@ int main(int argc, char** argv) {
 	glutInit(&argc, argv);                 
 	initalize();
 
-	srand(static_cast<unsigned int>(time(NULL)));
-
 	return 0;
 }
 
@@ -48,7 +47,7 @@ void initalize()
 {
 	atexit(cleanUp);
 
-	srand((unsigned int)time(0));
+	srand(static_cast<unsigned int>(time(NULL)));
 
 	gp_GlutTime = new GlutTime();
 	gp_GlutTime->Init();
@@ -71,8 +70,10 @@ void initalize()
 	glEnable(GL_COLOR_MATERIAL);
 	
 	glutIgnoreKeyRepeat(1);
+	glutMotionFunc(handleMouse);
 	glutPassiveMotionFunc(handleMouse);
-	glutKeyboardFunc(handleKeyboard);
+	glutKeyboardFunc(handleKeyPressed);
+	glutKeyboardUpFunc(handleKeyReleased);
 	glutReshapeFunc(reshape);
 
 	glutSetCursor(GLUT_CURSOR_NONE);
@@ -100,26 +101,21 @@ void update(float gameTime)
 	gp_Game->Update(gameTime);
 	glutPostRedisplay(); 
 
-	//if (!g_MouseFree)
-		//SetCursorPos((int)(g_ScreenSize.X / 2.0f), (int)(g_ScreenSize.Y / 2.0f));
+	if (!g_MouseFree)
+		SetCursorPos((int)(g_ScreenSize.X / 2.0f) + glutGet(GLUT_WINDOW_X), (int)(g_ScreenSize.Y / 2.0f) + glutGet(GLUT_WINDOW_Y));
 }
 
 //--------------------------------------------------------------------------------
 void handleMouse(int x, int y)
 {
-	//if (!g_MouseFree)
+	if (!g_MouseFree)
 		gp_Game->HandleMouse(Vector2D((float)x, (float)y));
 }
 
-void handleMousePassive(int x, int y)
-{
-	gp_Game->HandleMousePassive(x, y);
-}
-
 //--------------------------------------------------------------------------------
-void handleKeyboard(unsigned char key, int x, int y)
+void handleKeyPressed(unsigned char key, int x, int y)
 {
-	gp_Game->HandleKey(key);
+	gp_Game->HandleKeyPressed(key);
 
 	if (key == ESCAPE_KEY)
 	{
@@ -132,10 +128,16 @@ void handleKeyboard(unsigned char key, int x, int y)
 
 		if (g_MouseFree) glutSetCursor(GLUT_CURSOR_INHERIT);
 		else glutSetCursor(GLUT_CURSOR_NONE);
+
+		SetCursorPos((int)(g_ScreenSize.X / 2.0f) + glutGet(GLUT_WINDOW_X), (int)(g_ScreenSize.Y / 2.0f) + glutGet(GLUT_WINDOW_Y));
 	}
 }
 
-
+//--------------------------------------------------------------------------------
+void handleKeyReleased(unsigned char key, int x, int y)
+{
+	gp_Game->HandleKeyReleased(key);
+}
 
 //--------------------------------------------------------------------------------
 void display() {

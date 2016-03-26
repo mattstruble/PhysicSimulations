@@ -20,7 +20,7 @@ public:
 	void Init(int x, int y);
 	void Draw();
 	void Update(float dt);
-	void HandleKey(unsigned char key);
+	void HandleKeyPressed(unsigned char key);
 	
 	inline void SetTarget(PhysicObject* object) { mp_TargetObject = object; };
 

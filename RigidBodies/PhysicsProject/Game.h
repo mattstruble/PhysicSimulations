@@ -28,8 +28,8 @@ public:
 	void Draw();
 	void CleanUp();
 	void HandleMouse(Vector2D mousePos);
-	void HandleMousePassive(int x, int y);
-	void HandleKey(unsigned char key);
+	void HandleKeyPressed(unsigned char key);
+	void HandleKeyReleased(unsigned char key);
 
 private:
 	Camera* mp_Camera;
