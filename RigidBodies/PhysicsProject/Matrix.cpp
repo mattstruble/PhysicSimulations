@@ -6,6 +6,7 @@
 #include "Matrix.h"
 #include <cmath>
 #include <limits>
+#include <sstream>
 //======================================================================
 Matrix::Matrix()
 : Matrix(2, true)
@@ -128,8 +129,7 @@ Matrix Matrix::Transpose() const
 	{
 		for (int j = 0; j < m_NumColumns; j++)
 		{
-			transpose.Set(i * m_NumColumns + j, mp_Matrix[j * m_NumColumns + i]);
-			transpose.Set(j * m_NumColumns + i, mp_Matrix[i * m_NumColumns + j]);
+			transpose.Set(j, i, Get(i, j));
 		}
 	}
 
@@ -348,9 +348,9 @@ Matrix Matrix::InverseNN() const
 		int n = inverse.GetNumRows();
 		int i, j, k;
 		float d;
-		for (int i = 1; i <= n; i++)
+		for (int i = 0; i < n; i++)
 		{
-			for (j = 1; j <= 2 * n; j++)
+			for (j = 0; j < 2 * n; j++)
 			{
 				if (j == (i + n))
 				{
@@ -497,13 +497,16 @@ Vector3D Matrix::TransformTranspose(const Vector3D& vector)
 //--------------------------------------------------------------------------------------------
 void Matrix::SkewSymmetric(const Vector3D& vector)
 {
-	mp_Matrix[0] = mp_Matrix[4] = mp_Matrix[8] = 0;
-	mp_Matrix[1] = -vector.Z;
-	mp_Matrix[2] = vector.Y;
-	mp_Matrix[3] = vector.Z;
-	mp_Matrix[5] = -vector.X;
-	mp_Matrix[6] = -vector.Y;
-	mp_Matrix[7] = vector.X;
+	if (m_NumColumns * m_NumRows == 9)
+	{
+		mp_Matrix[0] = mp_Matrix[4] = mp_Matrix[8] = 0;
+		mp_Matrix[1] = -vector.Z;
+		mp_Matrix[2] = vector.Y;
+		mp_Matrix[3] = vector.Z;
+		mp_Matrix[5] = -vector.X;
+		mp_Matrix[6] = -vector.Y;
+		mp_Matrix[7] = vector.X;
+	}
 }
 
 //--------------------------------------------------------------------------------------------
@@ -641,11 +644,13 @@ Vector3D Matrix::operator*(const Vector3D& rhs) const
 	tempArray[0] = rhs.X;
 	tempArray[1] = rhs.Y;
 	tempArray[2] = rhs.Z;
-
 	Matrix vectorMatrix = Matrix(3, 1, tempArray);
-	vectorMatrix *= *this;
 
-	return Vector3D(vectorMatrix.Get(0), vectorMatrix.Get(1), vectorMatrix.Get(2));
+	Matrix tmpMatrix = Matrix(*this);
+
+	tmpMatrix *= vectorMatrix;
+
+	return Vector3D(tmpMatrix.Get(0), tmpMatrix.Get(1), tmpMatrix.Get(2));
 }
 
 //--------------------------------------------------------------------------------
@@ -713,5 +718,33 @@ bool Matrix::operator==(const Matrix& rhs) const
 bool Matrix::operator!=(const Matrix& rhs) const
 {
 	return !(*this == rhs);
+}
+
+//--------------------------------------------------------------------------------
+std::ostream& operator<<(std::ostream& stream, const Matrix& matrix)
+{
+	stream << "[";
+
+	int r = matrix.GetNumRows();
+	int c = matrix.GetNumColumns();
+
+	for (int i = 0; i < r * c; i++)
+	{
+		stream << matrix.Get(i) << ", ";
+
+		if (i % c == 0)
+			stream << "; ";
+	}
+	stream << "]";
+
+	return stream;
+}
+
+//--------------------------------------------------------------------------------
+std::string Matrix::ToString() const
+{
+	std::ostringstream ss;
+	ss << (*this);
+	return ss.str();
 }
 //================================================================================

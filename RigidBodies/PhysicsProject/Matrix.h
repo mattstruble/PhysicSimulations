@@ -8,6 +8,7 @@
 #pragma once
 //======================================================================
 #include "Vector3D.h"
+#include <ostream>
 //======================================================================
 class Vector3D;
 //======================================================================
@@ -59,6 +60,9 @@ public:
 	inline int GetNumRows() const { return m_NumRows; };
 	inline int GetNumColumns() const { return m_NumColumns; };
 	inline bool SameSize(const Matrix& rhs) const { return rhs.GetNumRows() == m_NumRows && rhs.GetNumColumns() == m_NumColumns; };
+
+	friend std::ostream& Matrix::operator<<(std::ostream& stream, const Matrix& matrix);
+	std::string ToString() const;
 
 private:
 	void initalizeMatrix(int rows, int columns);
