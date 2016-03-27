@@ -92,6 +92,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Test_Matrix.cpp" />
+    <ClCompile Include="Test_Vector3D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PhysicsProject\PhysicsProject.vcxproj">

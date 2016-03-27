@@ -12,9 +12,9 @@ CollisionHandler::CollisionHandler()
 	m_MaxIterations = 5;
 	m_Collisions = 0;
 
-	m_MaxPosIterations = 1;
+	m_MaxPosIterations = 5;
 	m_PosIterations = 0;
-	m_MaxVelIterations = 1;
+	m_MaxVelIterations = 5;
 	m_VelIterations = 0;
 
 	m_Restitution = 0.5f;
@@ -22,8 +22,8 @@ CollisionHandler::CollisionHandler()
 
 	mp_RBCollisionDetector = new RBCollisionDetector();
 
-	m_PositionEpsilon = 0.01f;
-	m_VelocityEpsilon = 0.01f;
+	m_PositionEpsilon = 0.0001f;
+	m_VelocityEpsilon = 0.0001f;
 }
 
 //-----------------------------------------------------------------------------

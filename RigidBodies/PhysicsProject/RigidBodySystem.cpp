@@ -7,6 +7,7 @@
 #include "ConstantGravityForceGenerator.h"
 #include "RBGameObjectContact.h"
 #include "Sphere.h"
+#include "Cube.h"
 //======================================================================
 void RigidBodySystem::Initialize(PhysicObjectHandler* handler)
 {
@@ -58,6 +59,19 @@ void RigidBodySystem::Initialize(PhysicObjectHandler* handler)
 
 	handler->AddCollisionObject(rbSphere3);
 	handler->AddToRegistry(rbSphere3, gravity);
+
+	Cube* cube1 = new Cube(2);
+	cube1->SetColor(Color::AZURE);
+
+	RBGameObject* rbCube1 = new RBGameObject();
+	rbCube1->Initialize(Vector3D(10, 6, 10), 100, Color::AZURE);
+	rbCube1->SetPrimitive(cube1);
+	rbCube1->SetCollisionType(e_CollisionType::CUBE);
+
+	mp_RBGameObjects.push_back(rbCube1);
+
+	handler->AddCollisionObject(rbCube1);
+	handler->AddToRegistry(rbCube1, gravity);
 	
 
 	handler->AddContactGenerator(new RBGameObjectContact()); 
