@@ -13,7 +13,7 @@ namespace PhysicsProjectTests
 	{
 	public:
 
-		TEST_METHOD(Test_Identity)
+		TEST_METHOD(Matrix_TestIdentity)
 		{
 			float* startValues = new float[9] {
 				1.0f, 0.0f, 0.0f,
@@ -27,7 +27,7 @@ namespace PhysicsProjectTests
 			Assert::IsTrue(startMatrix.Inverse() == identity);
 		}
 
-		TEST_METHOD(Test_Addition)
+		TEST_METHOD(Matrix_TestAddition)
 		{
 			float* aValues = new float[9] {
 				1.0f, 2.0f, 3.0f,
@@ -53,7 +53,7 @@ namespace PhysicsProjectTests
 			Assert::IsTrue(a + b == c);
 		}
 
-		TEST_METHOD(Test_Subtraction)
+		TEST_METHOD(Matrix_TestSubtraction)
 		{
 			float* aValues = new float[9] {
 				1.0f, 2.0f, 3.0f,
@@ -79,7 +79,7 @@ namespace PhysicsProjectTests
 			Assert::IsTrue(a - b == c);
 		}
 
-		TEST_METHOD(Test_Float_Multiplication)
+		TEST_METHOD(Matrix_TestFloatMultiplication)
 		{
 			Matrix a = Matrix::Identity(3, 3);
 
@@ -96,7 +96,7 @@ namespace PhysicsProjectTests
 			Assert::IsTrue(a * b == c);
 		}
 
-		TEST_METHOD(Test_Vector3D_Multiplication)
+		TEST_METHOD(Matrix_TestVector3DMultiplication)
 		{
 			float* aValues = new float[9] {
 				1.0f, 2.0f, 3.0f,
@@ -112,7 +112,7 @@ namespace PhysicsProjectTests
 			Assert::IsTrue(a * b == c);
 		}
 
-		TEST_METHOD(Test_NxN_Multiplication)
+		TEST_METHOD(Matrix_TestNNMultiplication)
 		{
 			float* aValues = new float[9] {
 				1.0f, 2.0f, 3.0f,
@@ -138,7 +138,7 @@ namespace PhysicsProjectTests
 			Assert::IsTrue(a * b == c);
 		}
 
-		TEST_METHOD(Test_te_Multiplication)
+		TEST_METHOD(Matrix_TestTEMultiplication)
 		{
 			float* aValues = new float[9] {
 				1.0f, 2.0f, 3.0f,
@@ -166,7 +166,7 @@ namespace PhysicsProjectTests
 			Assert::IsTrue(a == c);
 		}
 
-		TEST_METHOD(Test_MxN_Multiplication)
+		TEST_METHOD(Matrix_TestMNMultiplication)
 		{
 			float* aValues = new float[9] {
 				1.0f, 2.0f, 3.0f,
@@ -192,7 +192,7 @@ namespace PhysicsProjectTests
 			Assert::IsTrue(a * b == c);
 		}
 
-		TEST_METHOD(Test_NxN_Transpose)
+		TEST_METHOD(Matrix_TestNNTranspose)
 		{
 			float* startValues = new float[9] {
 				1.0f, 2.0f, 3.0f,
@@ -211,7 +211,7 @@ namespace PhysicsProjectTests
 			Assert::IsTrue(startMatrix.Transpose() == transpose);
 		}
 
-		TEST_METHOD(Test_MxN_Transpose)
+		TEST_METHOD(Matrix_TestMNTranspose)
 		{
 			float* startValues = new float[12] {
 				1.0f, 2.0f, 3.0f, 4.0f,
@@ -231,7 +231,7 @@ namespace PhysicsProjectTests
 			Assert::IsTrue(startMatrix.Transpose() == transpose);
 		}
 
-		TEST_METHOD(Test_3x3_Inverse)
+		TEST_METHOD(Matrix_Test33Inverse)
 		{
 			float* startValues = new float[9] { 
 				1.0f, 2.0f, 3.0f,
@@ -250,7 +250,7 @@ namespace PhysicsProjectTests
 			Assert::IsTrue(startMatrix.Inverse() == invMatrix);
 		}
 
-		TEST_METHOD(Test_4x4_Inverse)
+		TEST_METHOD(Matrix_Test44Inverse)
 		{
 			float* startValues = new float[16] {
 				4.0f, 0.0f, 0.0f, 0.0f,
