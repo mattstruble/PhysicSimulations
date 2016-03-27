@@ -9,21 +9,19 @@
 //======================================================================
 CollisionHandler::CollisionHandler()
 {
-	m_MaxIterations = 5;
+	m_MaxIterations = 4;
 	m_Collisions = 0;
 
 	m_MaxPosIterations = 5;
-	m_PosIterations = 0;
+	m_PositionEpsilon = 0.0001f;
+
 	m_MaxVelIterations = 5;
-	m_VelIterations = 0;
+	m_VelocityEpsilon = 0.0001f;
 
 	m_Restitution = 0.5f;
-	m_Friction = 0.5f;
+	m_Friction = 0.1f;
 
 	mp_RBCollisionDetector = new RBCollisionDetector();
-
-	m_PositionEpsilon = 0.0001f;
-	m_VelocityEpsilon = 0.0001f;
 }
 
 //-----------------------------------------------------------------------------
@@ -40,7 +38,7 @@ void CollisionHandler::Initialize()
 //-----------------------------------------------------------------------------
 void CollisionHandler::Update(float dt)
 {
-	int iterations = collisions();
+	int iterations = collisions() * 2 - 1;
 
 	m_Collisions = m_Contacts.size();
 

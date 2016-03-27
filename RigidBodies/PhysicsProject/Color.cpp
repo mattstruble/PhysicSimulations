@@ -18,4 +18,4 @@ const struct Color Color::AZURE				= Color(0, 127, 255) / Color::DEFAULT;
 const struct Color Color::LIME				= Color(50, 205, 50) / Color::DEFAULT;
 const struct Color Color::CORNFLOWERBLUE	= Color(100, 149, 237) / Color::DEFAULT;
 const struct Color Color::GREY				= Color(128, 128, 128) / Color::DEFAULT;
-
+const struct Color Color::RANDOM			= Color(rand() % 256, rand() % 256, rand() % 256) / Color::DEFAULT;

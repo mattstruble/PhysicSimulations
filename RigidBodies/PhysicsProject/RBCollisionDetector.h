@@ -18,7 +18,7 @@ private:
 	static float m_Mults[8][3];
 
 private:
-	void fillPointFaceCubeCube(const RBCollisionCube& cubeOne, const RBCollisionCube& cubeTwo, const Vector3D& toCenter, CollisionData* collisionData, unsigned int best, float penetration);
+	void fillPointFaceCubeCube(const RBCollisionCube& cubeOne, const RBCollisionCube& cubeTwo, const Vector3D& toCenter, CollisionHandler* collisionHandler, unsigned int best, float penetration);
 	Vector3D getContactPoint(const Vector3D& pointOne, const Vector3D& directionOne, float sizeOne, const Vector3D& pointTwo, const Vector3D directionTwo, float sizeTwo, bool useOne);
 
 public:
