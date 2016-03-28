@@ -20,10 +20,10 @@ void RigidBodySystem::Initialize(PhysicObjectHandler* handler)
 
 	handler->Add(ground);
 	handler->AddContactGenerator(new RBGroundContact());
-
+	/*
 	ConstantGravityForceGenerator* gravity = new ConstantGravityForceGenerator(Vector3D(0, -9.8f, 0));
 
-	for (int i = 0; i < 15; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		Color c = Color(rand() % 256, rand() % 256, rand() % 256);
 		c.ConvertToDecimal();
@@ -39,58 +39,8 @@ void RigidBodySystem::Initialize(PhysicObjectHandler* handler)
 
 		handler->AddCollisionObject(rbSphere);
 		handler->AddToRegistry(rbSphere, gravity);
-	}
-
+	}*/
 	/*
-	Sphere* sphere = new Sphere(1, 36, 36);
-	sphere->SetColor(Color::MAGENTA);
-
-	RBGameObject* rbSphere = new RBGameObject();
-	rbSphere->Initialize(Vector3D(0, 5, 0), 1, Color::MAGENTA);
-	rbSphere->SetPrimitive(sphere);
-
-	mp_RBGameObjects.push_back(rbSphere);
-
-	handler->AddCollisionObject(rbSphere);
-	handler->AddToRegistry(rbSphere, gravity);
-
-	
-	Sphere* sphere2 = new Sphere(1, 36, 36);
-	sphere2->SetColor(Color::GREEN);
-
-	RBGameObject* rbSphere2 = new RBGameObject();
-	rbSphere2->Initialize(Vector3D(0, 10, 0), 1, Color::GREEN);
-	rbSphere2->SetPrimitive(sphere2);
-
-	mp_RBGameObjects.push_back(rbSphere2);
-
-	handler->AddCollisionObject(rbSphere2);
-	handler->AddToRegistry(rbSphere2, gravity);
-
-	Sphere* sphere3 = new Sphere(1, 36, 36);
-	sphere3->SetColor(Color::RED);
-
-	RBGameObject* rbSphere3 = new RBGameObject();
-	rbSphere3->Initialize(Vector3D(10, 5, 0), 1, Color::RED);
-	rbSphere3->SetPrimitive(sphere3);
-
-	mp_RBGameObjects.push_back(rbSphere3);
-
-	handler->AddCollisionObject(rbSphere3);
-	handler->AddToRegistry(rbSphere3, gravity);
-
-	Sphere* sphere4 = new Sphere(1, 36, 36);
-	sphere4->SetColor(Color::ORANGE);
-
-	RBGameObject* rbSphere4 = new RBGameObject();
-	rbSphere4->Initialize(Vector3D(10.1, 10, 0), 1, Color::ORANGE);
-	rbSphere4->SetPrimitive(sphere4);
-
-	mp_RBGameObjects.push_back(rbSphere4);
-
-	handler->AddCollisionObject(rbSphere4);
-	handler->AddToRegistry(rbSphere4, gravity);
-	
 	Cube* cube1 = new Cube(2);
 	cube1->SetColor(Color::AZURE);
 
@@ -106,6 +56,29 @@ void RigidBodySystem::Initialize(PhysicObjectHandler* handler)
 	*/
 
 	handler->AddContactGenerator(new RBGameObjectContact()); 
+}
+
+void RigidBodySystem::Spawn(int num)
+{
+	ConstantGravityForceGenerator* gravity = new ConstantGravityForceGenerator(Vector3D(0, -9.8f, 0));
+
+	for (int i = 0; i < num; i++)
+	{
+		Color c = Color(rand() % 256, rand() % 256, rand() % 256);
+		c.ConvertToDecimal();
+
+		Sphere* sphere = new Sphere(1, 36, 36);
+		sphere->SetColor(c);
+
+		RBGameObject* rbSphere = new RBGameObject();
+		rbSphere->Initialize(Vector3D(rand() % 10 + 1, rand() % 10 + 1, rand() % 10 + 1), 1, c);
+		rbSphere->SetPrimitive(sphere);
+
+		mp_RBGameObjects.push_back(rbSphere);
+
+		mp_Handler->AddCollisionObject(rbSphere);
+		mp_Handler->AddToRegistry(rbSphere, gravity);
+	}
 }
 
 void RigidBodySystem::Draw()

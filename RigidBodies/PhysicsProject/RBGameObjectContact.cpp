@@ -20,7 +20,7 @@ RBGameObjectContact::~RBGameObjectContact()
 void RBGameObjectContact::AddContact(CollisionHandler* collisionHandler) const
 {
 	std::vector<RigidBody*> rigidBodies = collisionHandler->GetRigidBodies();
-
+	Debug::LOG(Color::WHITE, "called");
 	for (unsigned int i = 0; i < rigidBodies.size(); ++i)
 	{
 		for (unsigned int j = i + 1; j < rigidBodies.size(); j++)

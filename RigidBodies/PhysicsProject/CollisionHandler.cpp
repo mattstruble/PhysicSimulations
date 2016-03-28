@@ -13,10 +13,10 @@ CollisionHandler::CollisionHandler()
 	m_Collisions = 0;
 
 	m_MaxPosIterations = 5;
-	m_PositionEpsilon = 0.0001f;
+	m_PositionEpsilon = 0.1f;
 
 	m_MaxVelIterations = 5;
-	m_VelocityEpsilon = 0.0001f;
+	m_VelocityEpsilon = 0.1f;
 
 	m_Restitution = 0.5f;
 	m_Friction = 0.1f;

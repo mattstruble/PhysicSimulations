@@ -28,6 +28,7 @@ public:
 	void Initialize(PhysicObjectHandler* handler);
 	void Update(float dt) {};
 	void Draw();
+	void Spawn(int num);
 	void Reset() {};
 	void Clear() {};
 

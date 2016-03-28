@@ -381,7 +381,7 @@ void RBCollisionDetector::CheckCollision(RigidBody* rigidBodyOne, RigidBody* rig
 			SphereAndSphere(rigidBodyOne->GetCollisionSphere(), rigidBodyTwo->GetCollisionSphere(), collisionHandler);
 			break;
 		case e_CollisionType::CUBE:
-			CubeAndSphere(rigidBodyTwo->GetCollisionCube(), rigidBodyOne->GetCollisionSphere(), collisionHandler);
+			//CubeAndSphere(rigidBodyTwo->GetCollisionCube(), rigidBodyOne->GetCollisionSphere(), collisionHandler);
 			break;
 		}
 	}
@@ -390,10 +390,10 @@ void RBCollisionDetector::CheckCollision(RigidBody* rigidBodyOne, RigidBody* rig
 		switch (rigidBodyTwo->GetCollisionType())
 		{
 		case e_CollisionType::SPHERE:
-			CubeAndSphere(rigidBodyOne->GetCollisionCube(), rigidBodyTwo->GetCollisionSphere(), collisionHandler);
+			//CubeAndSphere(rigidBodyOne->GetCollisionCube(), rigidBodyTwo->GetCollisionSphere(), collisionHandler);
 			break;
 		case e_CollisionType::CUBE:
-			CubeAndCube(rigidBodyOne->GetCollisionCube(), rigidBodyTwo->GetCollisionCube(), collisionHandler);
+			//CubeAndCube(rigidBodyOne->GetCollisionCube(), rigidBodyTwo->GetCollisionCube(), collisionHandler);
 			break;
 		}
 	}

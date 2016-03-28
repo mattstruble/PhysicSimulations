@@ -79,6 +79,11 @@ void Game::HandleKeyPressed(unsigned char key)
 		mp_Camera->SetTarget(mp_PhysicObjectHandler->GetTarget());
 		mp_HUD->SetTarget(mp_PhysicObjectHandler->GetTarget());
 	}
+
+	if (key == 't')
+	{
+		mp_RigidBodySystem->Spawn(10);
+	}
 }
 
 //--------------------------------------------------------------------------------

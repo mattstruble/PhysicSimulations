@@ -57,7 +57,7 @@ void initalize()
 
 	glutInitWindowSize(static_cast<int>(g_ScreenSize.X), static_cast<int>(g_ScreenSize.Y));
 	glutInitWindowPosition(0, 0);
-	g_Window = glutCreateWindow("Solar System Simulation");
+	g_Window = glutCreateWindow("Rigid Body Simulation");
 	glutDisplayFunc(display);
 	glutIdleFunc(idle);
 
